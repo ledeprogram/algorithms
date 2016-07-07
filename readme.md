@@ -35,6 +35,7 @@ This course presents an overview of algorithms as they relate to journalistic tr
 ###Learning Objectives
 
 + You will understand the basic structure and operation of algorithms
++ You will be familiar with basic descriptive statistics
 + You will understand the primary types of data science algorithms, including techniques of supervised and unsupervised machine learning
 + You will be practiced in implementing basic algorithms in Python
 + You will be able to meaningfully explain and critique the use and operation of algorithms as tools of public policy and business
