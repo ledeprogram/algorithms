@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Github Submission Tutorial</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms
+##Richard Dunks, Instructor
+##Submitting assignments in Github
+
+---
+
+#First time
+![img-left-55](../images/github_mac.png)
+![img-right-45](../images/github_win.png)
+&nbsp;
+--
+&nbsp;
+```bash
+git remote add upstream https://github.com/ledeprogram/algorithms.git
+git fetch upstream
+git checkout gh-pages
+git reset --hard upstream/gh-pages  
+git push origin gh-pages --force
+```
+---
+
+#Every time afterwards
+
+##NOTE: This will reset your files so make sure you don't have anything you don't want overwritten in the class files
+
+```bash
+git fetch upstream
+git checkout gh-pages
+git reset --hard upstream/gh-pages  
+git push origin gh-pages --force
+```
+---
+
+#Make your changes and commit the result
+![img-center-70](../images/github4.png)
+
+---
+
+#Open a pull request
+![img-center-90](../images/github_pull.png)
+
+--
+- - -
+![img-center-90](../images/github_pull2_box.png)
+
+---
+
+#Open a pull request
+![img-center-90](../images/github_pull3.png)
+
+---
+
+#Open a pull request
+![img-center-90](../images/github_pull3_box.png)
+
+---
+
+class:center,middle
+#And you're done
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
