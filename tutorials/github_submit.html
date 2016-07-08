@@ -26,29 +26,23 @@ class: center,middle
 ---
 
 #First time
-![img-left-55](../images/github_mac.png)
-![img-right-45](../images/github_win.png)
-&nbsp;
---
-&nbsp;
+
 ```bash
 git remote add upstream https://github.com/ledeprogram/algorithms.git
 git fetch upstream
 git checkout gh-pages
-git reset --hard upstream/gh-pages  
-git push origin gh-pages --force
+git merge upstream/gh-pages  
+git push origin gh-pages
 ```
----
+--
 
 #Every time afterwards
-
-##NOTE: This will reset your files so make sure you don't have anything you don't want overwritten in the class files
 
 ```bash
 git fetch upstream
 git checkout gh-pages
-git reset --hard upstream/gh-pages  
-git push origin gh-pages --force
+git merge upstream/gh-pages  
+git push origin gh-pages
 ```
 ---
 
@@ -78,6 +72,11 @@ git push origin gh-pages --force
 
 class:center,middle
 #And you're done
+
+---
+
+#References
++ [Github Help "Syncing a Fork"](https://help.github.com/articles/syncing-a-fork/)
 
     </textarea>
     <script src="../js/remark-latest.min.js">
