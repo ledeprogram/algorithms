@@ -20,6 +20,8 @@ Richard Dunks: rad2184 [at] columbia [dot] edu
 + [Course Readings](#course-readings)
 + [Assignments](#assignments)
 + [Course Policies](#course-policies)
++ [Resources](#resources)
++ [Course Outline](#course-outline)
 
 
 - - -
@@ -81,6 +83,8 @@ Class runs from 10am to 1pm Tuesday and Thursday. Lab time will be from 2pm to 5
 ######[back to top](#top)
 
 ----
+
+<a id="resources"></a>
 ###Resources
 ####Technical
 
@@ -129,6 +133,7 @@ Steiner, Christopher. <i>Automate This: How Algorithms Came to Rule Our World</i
 ######[back to top](#top)
 
 ----
+<a id="course-outline"></a>
 ###Course Outline
 (Subject to change)
 
