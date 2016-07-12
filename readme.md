@@ -9,7 +9,7 @@ Richard Dunks: rad2184 [at] columbia [dot] edu
 
 ####Room Number: Pulitzer Hall 601B
 
-####Course Dates: 12 July - 27 August 2016
+####Course Dates: 12 July - 25 August 2016
 
 - - -
 
@@ -51,15 +51,16 @@ This course presents an overview of algorithms as they relate to journalistic tr
 
 <a id='course-readings'></a>
 ###Course Readings
-The required readings for this course consist of book chapters, newspaper articles, and short blog posts. The intention is to help give you a foundation in the critical skills ahead of class lectures. All required readings are available online or will be made available to you electronically. Recommended readings are suggestions if you wish to study further the topics covered in class. Suggested readings will also be provided as appropriate for those interested in a more in-depth discussion of the material covered in class.
+The required readings for this course consist of book chapters, newspaper articles, and short blog posts. The intention is to help give you a foundation in the critical skills ahead of class lectures. All required readings are available online or will be made available to you electronically. Recommended readings are suggestions if you wish to study further the topics covered in class. Suggested readings will also be provided as appropriate for those interested in a more in-depth discussion of the material covered in class. <b>Readings assigned in class are to be completed before the next class</b>.
 
 ######[back to top](#top)
 
 <a id='assignments'></a>
 ###Assignments
-This course consists of programming and critical response assignments intended to reinforce learning and provide you with pratical applications of the material covered in class. Completion of these assignments is critical to achieving the learning objectives of this course. Assignments are intended to be completed during lab time or for homework. Generally, assignments will be due the following week, unless otherwise stated. For example, exercises assigned on Tuesday will be due before class on the following Tuesday. 
+This course consists of programming and critical response assignments intended to reinforce learning and provide you with practical applications of the material covered in class. Completion of these assignments is critical to achieving the learning objectives of this course. Assignments are intended to be completed during lab time or for homework. Generally, assignments will be due before the start of the next class, unless otherwise stated. For example, assignments given on Tuesday will be due before class on Thursday. Time will be set aside in class to review assignments and provide feedback to you on your work.
 
-+ Programming assignments will be submitted via Github. <b>The exercises should be standalone for each assignment, not a combination of all assignments. This allows them to be tested and scored separately.</b> 
++ Programming assignments will be submitted via Github. Please follow the [tutorial for submitting assignments on Github](tutorials/github_submit.html). <b>The exercises should be standalone for each assignment, not a combination of all assignments</b>. This allows them to be tested and scored separately. 
++ Programming assignments not following the naming convention `<lastname>_<firstname>_<class_num>_<assignment_num>.ipynb` will not be counted as completed. 
 + Response questions should be clear, concise, and use the elements of good grammar. This is an opportunity to develop your ability to explain algorithms to your audience. You will receive further direction on how to submit these assignments.
 
 ######[back to top](#top)
