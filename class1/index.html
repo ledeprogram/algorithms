@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: How I Learned to Stop Worrying and Do Cool Things With Code
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class1
+
+---
+
+# Goals for Today
+--
+
++ Review basic course information
+--
+
++ Discuss algorithms and why they’re important
+--
+
++ Explain the basic structure of algorithms 
+--
+
++ Create a basic algorithm in Python
+--
+
++ Review and discuss basic data structures in Python
+--
+
++ Discuss the assignment submission process in class
+
+---
+
+#Outcomes
+--
+
++ You will have a basic understanding of algorithms and why they’re important to study
+--
+
++ You will understand the basic structure of an algorithm
+--
+
++ You will have designed and implemented a basic algorithm in Python
+--
+
++ You will be familiar with the workflow for submitting programming assignments in this class
+
+---
+
+
+#But first
+
+![img-center-100](http://i.giphy.com/QQkyLVLAbQRKU.gif)
+<!-- <iframe src="//giphy.com/embed/QQkyLVLAbQRKU" width="680" height="451" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/hello-austin-powers-introduction-QQkyLVLAbQRKU">via GIPHY</a></p> -->
+
+---
+
+#Introductions
+--
+
++ Your name
+--
+
++ Briefly describe your background
+--
+
++ Tell us one thing you’d like to get out of this class
+
+---
+
+#Assumptions
+--
+
++ You’re all journalists or interested in journalistic tradecraft as it relates to data
+--
+
++ You’re not computer scientists
+--
+
++ You’re not interested in creating the next Facebook (unless it’s for journalists)
+--
+
++ You’re not great at math (don’t worry, I’m not either)
+--
+
++ You care more about the why than the how
+
+---
+
+#Learning Objectives
+--
+
++ You will understand the basic structure and operation of algorithms
+--
+
++ You will be familiar with basic descriptive statistics
+--
+
++ You will understand the primary types of data science algorithms, including techniques of supervised and unsupervised machine learning
+
+---
+
+#Learning Objectives
++ You will be practiced in implementing basic algorithms in Python
+
+--
++ You will be able to meaningfully explain and critique the use and operation of algorithms as tools of public policy and business
+--
+
++ You will understand how algorithms are applied in the newsroom
+
+---
+
+#Course Policies
+--
+
++ Attendance and Tardiness – Show up to every class and be on time
+--
+
++ Participation – Take an active role in your learning
+--
+
++ Late Assignments – Get your work in on time
+--
+
++ Office hours – I’m available when you need me via Slack (but ask the TAs) 
+
+---
+
+#Class Structure - Lecture
+--
+
++ From 10 am to 1 pm
+--
+
++ 2 85-minute blocks
+--
+
++ 10-minute break in between
+
+---
+
+#How do I teach?
++ [The Missing Pedagogy in Computer Science](http://wp.me/p2PLpM-1Jr) 
++ [Teaching with Intention](http://wp.me/p2PLpM-1Or) 
+
+---
+
+#Some of the topics we'll be covering
+--
+
++ What is an algorithm
+--
+
++ Descriptive statistics
+--
+
++ Machine learning
+--
+
++ Supervised learning
+--
+
++ Unsupervised learning
+--
+
++ Natural language processing
+--
+
++ Criticism of algorithms
+
+---
+
+#Seem like a lot?
+![img-center-100](http://i.giphy.com/oubM1tKqnLW5G.gif)
+
+---
+
+![img-center-100](http://i.giphy.com/6v7gLWWWyNKPm.gif)
+
+---
+
+class:center,middle
+#You'll be fine
+
+---
+
+class:middle
+![img-center-100](../images/Meme-Warning.png)
+
+---
+
+#Any questions?
+![img-center-100](http://i.giphy.com/6aWiWDs9FtnDG.gif)
+
+---
+
+class:center,middle
+#Let's get started
+
+---
+
+#Discussion
+##In groups of 4-5, discuss the following questions:
++ What is an algorithm?
++ Why are they important?
++ Why are we studying them in this class?
+
+##Write out the major themes that come up in your discussion on the Post-It notes provided and we’ll discuss as a class
+
+---
+
+#What is an Algorithm?
+--
+
++ A precise set of instructions required to accomplish a task
+--
+
++ Comprised of three components: Inputs, Operation, Output
+--
+
++ Each step in the operation must be clearly defined and work the same with any input
+
+---
+
+class:middle
+#[Example](https://www.linkedin.com/pulse/way-algorithm-claudia-perlich)
+![img-center-100](../images/cc_algo1.png)
+
+---
+
+class:middle
+.red[#Inputs]
+![img-center-100](../images/cc_algo2.png)
+
+---
+
+class:middle
+.red[#Operation]
+![img-center-100](../images/cc_algo3.png)
+
+---
+
+class:middle
+.red[#Output]
+![img-center-80](../images/cake.jpg)
+
+#####Credit: Flickr user [Patent and the Pantry](https://www.flickr.com/photos/26412869@N03/). Image used under a [Creative Commons BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode)
+
+---
+
+#Another example
+
+<a title="By Walké (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AAddition.gif"><img width="45" alt="img-center-50" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Addition.gif"/></a>
+--
+
+##What are the inputs, operation, and output here?
+
+---
+
+class:middle,center
+#We often write algorithms in functions
+##&nbsp;
+
+---
+
+class:middle,center
+#We often write algorithms in functions
+##So what's a function?
+
+---
+
+#Functions
+--
+
++ Block of organized, reusable code
+--
+
++ Ideally perform a single action
+--
+
++ Make your code more modular
+
+---
+
+#When do I write a function?
+--
+
++ If you find yourself repeating the same code sequence, it’s time to write a function
+--
+
++ [**D**on’t **R**epeat **Y**ourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+--
+
++ Helps make your code more readable and easier to maintain
+
+---
+
+#Function Example
++ Try this
+
+```python
+def add(x,y):
+  return x + y
+```
+
+--
+
+![img-center-70](../images/add_algo0.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+--
+
+![img-center-70](../images/add_algo2.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo3.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo4.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo5.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo6.png)
+
+---
+
+#Function Elements
+![img-center-70](../images/add_algo1.png)
+
+![img-center-70](../images/add_algo7.png)
+
+---
+
+class:center,middle
+#Why are functions important in an algorithms class?
+
+---
+
+#Now it's your turn
+##Write a function to calculate the hypotenuse of a right triangle given the two legs and test by calculating<br>`a = 3`, `b = 4`
+![img-center-40](../images/hypo_chart.png)
+--
+
+###Hint: try [`import math`](https://docs.python.org/3/library/math.html)
+
+---
+
+#You've created an algorithm
+![img-center-100](http://i.giphy.com/3o72FcJmLzIdYJdmDe.gif)
+
+---
+
+#Three elements of an algorithm (redux)
+![img-center-70](../images/algo_part1.png)
+--
+![img-center-70](../images/algo_part2.png)
+--
+![img-center-70](../images/algo_part3.png)
+
+---
+
+class:center,middle
+#[Algorithms in the Newsroom](https://github.com/ledeprogram/algorithms/blob/gh-pages/class1/newsroom_examples.md)
+
+---
+
+class:center,middle
+#[Data Journalism jobs](https://www.dropbox.com/sh/4gxyls1ebsviv49/AAAznW5bfeoHT0DCXErBo8U3a?dl=0)
+
+---
+
+class:center
+#10 Min Break
+![img-center-70](http://imgs.xkcd.com/comics/watson_medical_algorithm.png)
+Source: http://xkcd.com/1619/
+
+---
+
+class:center,middle
+#Let's review some things about Python
+
+---
+
+class:middle,center
+#Data structures
+
+---
+
+#What is a data structure?
+--
+
++ A way of organizing data in a computer program
+--
+
++ The method of organizing data differs across types, allowing for different applications
+--
+
++ Important to use the right data structure for the proper task
+
+---
+
+#Algorithms and Data Structures
+![img-center-90](../images/algo_ds.png)
+
+---
+
+class:center,middle
+#Data structures in Python
+##How many can you name?
+
+---
+
+#Lists
+--
+
++ The most versatile data structure in Python
+--
+
++ Can contain multiple data types
+--
+
++ Can be sliced or added to
+--
+
++ Are mutable (can be changed)
+--
+
++ Access individual items by index
+
+--
+
+![img-center-40](../images/list1.png)
+
+---
+
+#List functions
+--
+
++ append(_object_) - add object to list
+--
+
++ extend(_list_) - extend original list with elements of specified in list
+--
+
++ insert(_index, object_) - insert object at specified index
+--
+
++ pop(_[index]_) - pop element from list at index and return (default to last value in list)
+--
+
++ remove(_value_) - delete first occurrence of value from list (no return)
+
+---
+
+#List functions
++ reverse - reverse the order of the list in place
+--
+
++ sort() - sort the list
+--
+
++ count(_value_) - count number of occurrences of value
+--
+
++ index(_value_) - find index of first value and return 
+
+--
+
+##For more information, see [the documentation ](https://docs.python.org/2/library/functions.html#list)
+
+---
+
+#When to use a list
+--
+
++ When order matters
+--
+
++ When you can look up the value using a simple numerical index
+--
+
++ When your data might be changed, removed, or extended
+--
+
++ When your data doesn’t need to be unique
+
+---
+
+#Sets
+--
+
++ An unordered collection with no duplicate values
+--
+
++ Created using the keyword “set”
+--
+
++ More limited in the types of objects that can be included (must be hashable, no lists)
+
+--
+
+![img-center-55](../images/set1.png)
+
+---
+
+#When to use sets
+--
+
++ When you only need unique values
+--
+
++ When the data types you’re working with are relatively basic (hashable)
+--
+
++ When your data changes
+--
+
++ When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
+
+---
+
+#Tuples
+--
+
++ Immutable (unchangable) data structure similar to a list
+--
+
++ Can contain elements of different types (don’t need to be hashable)
+
+--
+
+![img-center-60](../images/tuple1.png)
+
+---
+
+#When to use tuples
+--
+
++ When your data doesn’t change
+--
+
++ When performance is important (tuples provide better performance because of their immutability)
+
+---
+
+#Dictionaries
+--
+
++ Stores data in key-value pairs
+--
+
++ Provides lookup based on custom keys (instead of numerical indexes)
+--
+
++ Keys must be unique
+
+--
+
+![img-center-100](../images/dict1.png)
+
+---
+
+#When to use a dictionary
+--
+
++ When you need to lookup values by a custom key
+--
+
++ When you need a fast way to lookup values
+--
+
++ When your data needs to be modified
+
+---
+
+#Things to remember with a dictionary
+--
+
++ Key-value pairs aren’t stored in order (use `collections.OrderedDict` if you need to key order is important)
+--
+
++ `collections.defaultdict` is a more flexible implementation for creating a dictionary and adding values
+
+--
+
+##For more information, [check this out](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
+
+---
+
+class:center,middle
+#Wrap-up
+![img-center-90](https://pbs.twimg.com/media/Cd13UaWW4AEuidR.jpg)
+
+---
+
+#Reading
++ Darren Rovell "[All Journalists Need to Be Data Driven](https://medium.com/@darrenrovell/all-journalists-need-to-be-data-driven-6dfc73e420d5#.v4dp0faeu)""
+
+---
+
+class:center,middle
+#Assignments
+
+---
+
+class:center,middle
+#[Submitting Code Assignments](../tutorials/github_submit.html)
+
+---
+
+#Do Now
++ Fork the [repository](https://github.com/ledeprogram/algorithms)
++ Clone the repository onto your local machine (`git clone`)
++ Commit a brief biography of yourself as assignment 0 (text file)
++ Do a pull request to submit
+
+---
+
+#Assignment 1
++ Write a function that takes in a list of numbers and outputs the mean of the numbers using the formula for mean. Do this without any built-in functions like `sum()`, `len()`, and, of course, `mean()`
+
+![img-center-90](../images/mean_form.png)
+
+---
+
+#Assignment 2
++ Create your own version of the [Mayoral Excuse Machine](http://dnain.fo/1CCHKmI) in Python that takes in a name and location, selects an excuse at random and prints an excuse (“Sorry, Richard, I was late to City Hall to meet you, I had a very rough night and woke up sluggish”)
++ Use the “[excuses.csv](homework/data/excuse.csv)” in the Github repository
++ Extra credit if you print the link to the story as well
+
+---
+
+#Assignment 3
++ Modify the code below ([in the repository](homework/Exercise3.ipynb)) that prints every prime number between 1 and 100 to only print every other prime number
++ Extra credit if you can modify the code to speed it up
+
+```python
+for num in range(1,101):
+    prime = True
+    for i in range(2,num):
+        if (num%i==0):
+            prime = False
+    if prime:
+        print(num)
+```
+
+---
+
+#Assignment 4
++ The code in [Exercise4.ipynb](homework/Exercise4.ipynb) is meant to search for New York Times articles on gay marriage and look at the mean and median word count, but the code has some problems
++ Follow the instructions in the notebook to fix the code and submit your fixed code
+
+---
+
+#Assignment 5
++ React to today's class in a short paragraph and email it to [me](mailto:rad2184[at]columbia[dot]edu?subject=Assignment5)
++ Include what you learned today and what topics you look forward to in the class
++ Include any additional information you feel I should know about yourself and your experience in this program so far
+
+---
+
+#Questions?
+![img-center-100](http://i.giphy.com/5XRB3Ay93FZw4.gif)
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
