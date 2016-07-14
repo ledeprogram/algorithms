@@ -161,13 +161,19 @@ and licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0
 #Branching
 [![img-center-100](https://confluence.atlassian.com/bitbucket/files/304578655/790630019/2/1449003550298/build_status_commits.png)](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html)
 
-[Source](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html), used under [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/legalcode).
+[Source](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html), used under [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/legalcode)
+
 ---
 
 class:center,middle
 #Still not clear on branching and forking?
 ##[Check out this description](https://confluence.atlassian.com/bitbucket/branch-or-fork-your-repository-221450630.html)
 ##[And this Stack Overflow response](http://stackoverflow.com/a/3611349/1808021)
+
+---
+
+class:center,middle
+#Can we start branching in assignments?
 
 ---
 
@@ -179,16 +185,16 @@ class:center,middle
 #Problems with submitting assignments
 --
 
-+ Not following the naming convention
++ Not following the naming convention (`<last>_<first>_<class>_<assign>.ipynb`)
 --
 
-+ Committing files you shouldn't have
++ Committing files you shouldn't have (only `git add` the files you want updated)
 --
 
-+ Overwriting the Exercise files
++ Overwriting the Exercise files (don't do that)
 --
 
-+ Trying to merge with the wrong branch
++ Trying to merge with the wrong branch (should be gh-pages)
 
 ---
 
@@ -256,6 +262,9 @@ class:center,middle
 --
 
 + More limited in the types of objects that can be included (stick with basic types)
+--
+
++ Think of it like a bag of things you toss values into without needing to get them out in any order
 
 --
 
@@ -349,11 +358,26 @@ class:center,middle
 --
 
 + Most basic form of control flow
+--
+
++ Basically the thing you've been doing this whole time
 
 ---
 
 #Conditional statement (selection)
 --
+
++ Code block only executes if some logical test is met
+--
+
++ Logical test can be as simple or complex as necessary
+--
+
++ Uses [Boolean logic](http://learnpythonthehardway.org/book/ex28.html)
+
+---
+
+#Conditional statement in Python (selection)
 
 + `if <logical test>:` code executes only if the logical test is `True` 
 --
@@ -377,35 +401,73 @@ elif temp > 85:
 else:
         print("The temperature is fine")
 ```
+---
+
+#Conditional statement in Python (selection)
++ Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
+```python
+temp = 70
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
 
 ---
 
 #For Loops (iteration)
 --
 
-+ Loops through sequence of values
++ Loops through a set sequence of values
 --
 
-+ Assign a temporary value that takes on the element from the sequence
++ Assign a temporary variable that takes on the element from the sequence
 --
 
-+ For use within the body of the loop
++ Temporary variable used within the body of the loop
 --
 
-+ Temporary value is reassigned with next value from sequence
++ Temporary variable is reassigned with next value from sequence
 --
 
 ```python
 words = ['cat', 'window', 'defenestrate']
 for w in words:
-    print(w)
+        print(w)
 ```
 
 ---
 
 #While Loops (iteration)
++ Loops until a guard condition is met
+--
 
+```python
+n = 0
+while n < 5:
+        n += 1
+print(n)
+```
+--
 
++ What happens if I forgot the `n += 1`?
+--
+
+![img-center-70](http://i.giphy.com/HPASxeEylfHA4.gif)
+
+---
+
+#While Loops (iteration)
++ Use when the number of iterations is unknown
+--
+
++ Helps ensure a condition or variable state is achieved before moving on with code execution
 
 ---
 
@@ -414,6 +476,24 @@ class:center
 ![img-center-40](http://imgs.xkcd.com/comics/git.png)
 Source: http://xkcd.com/1597/
 
+---
+
+#Study of Algorithms
+--
+
++ Design of an algorithm
+--
+
++ Validation of an algorithm
+--
+
++ Analysis of an algorithm
+--
+
++ Test of an algorithm
+
+--
+##This is what a "real" algorithms class would be like
 
 ---
 
