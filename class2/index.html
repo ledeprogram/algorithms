@@ -39,13 +39,13 @@ class: center,middle
 # Goals for Today
 --
 
++ Review the reading assignment
+--
+
 + Review git, Github, and the homework submission process
 --
 
 + Review the exercises
---
-
-+ Review the reading assignment
 --
 
 + Review sets and control flow in Python
@@ -58,6 +58,11 @@ class: center,middle
 --
 
 + Discuss the analysis of algorithms (if time)
+
+---
+
+class:center,middle
+#So what did you think of [the reading](https://medium.com/@darrenrovell/all-journalists-need-to-be-data-driven-6dfc73e420d5#.v4dp0faeu)?
 
 ---
 
@@ -412,16 +417,6 @@ Source: http://xkcd.com/1597/
 
 ---
 
-#Another example
-
-<a title="By Walké (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AAddition.gif"><img width="45" alt="img-center-50" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Addition.gif"/></a>
-
---
-
-##How would we describe this in code?
-
----
-
 #Pseudocode
 --
 
@@ -464,23 +459,73 @@ def grader(students_grade):
 
 ---
 
-#How would we do multidigit addition in pseudocode?
+#Another example
+
+<a title="By Walké (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AAddition.gif"><img width="45" alt="img-center-50" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Addition.gif"/></a>
+
+##How would we describe multi-digit addition in pseudocode?
+
+---
+
+class:center,middle
+#Let's write some more algorithms
+
+---
+
+#Sort
+--
+
++ Input: a list of values
+--
+
++ Operation: sort the list
+--
+
++ Output: a sorted list of values
+
+---
+
+#Search
+--
+
++ Input: a sorted list and a search term
+--
+
++ Operation: find the element in the list
+--
+
++ Output: the location of the item in the list or indicate if it's not there
+
+---
+
+#Estimating complexity
+![img-center-100](http://i.stack.imgur.com/WcBRI.png)
 
 ---
 
 #Analysis of Algorithms
->People who analyze algorithms have double happiness. First of all they experience the sheer beauty of elegant mathematical patterns that surround elegant computational procedures. Then they receive a practical payoff when their theories make it possible to get other jobs done more quickly and more economically.
 
--[Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/aa.html)
+>###People who analyze algorithms have double happiness. First of all they experience the sheer beauty of elegant mathematical patterns that surround elegant computational procedures. Then they receive a practical payoff when their theories make it possible to get other jobs done more quickly and more economically.
+
+###-[Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/aa.html)
 
 ---
 
 #Readings
++ Hon, Keone. “[An Introduction to Statistics.](http://www.fd.cvut.cz/department/k611/PEDAGOG/THO_A/A_soubory/statistics_firstfive.pdf)” Ch. 1 and 2.
++ Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
 
 ---
 
-#Assignments
+#Assignment 1
++ Implement the sorting algorithm you came up with in pseudocode with Python
++ Test the sorting algorithm with a list of 10, 100, 1000 random numbers and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
 
+---
+
+#Assignment 2
++ Implement the search algorithm you came up with in pseudocode with Python
++ Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
 
 ---
 class:center,middle
