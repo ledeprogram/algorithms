@@ -11,7 +11,7 @@
 layout:true
 
 <p class="footer">
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms:Github Submission Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms:Submitting Assignments with Github</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
 </p>
 ---
 
@@ -29,43 +29,43 @@ class: center,middle
 
 ```bash
 git remote add upstream https://github.com/ledeprogram/algorithms.git
-git fetch upstream
-git checkout gh-pages
-git merge upstream/gh-pages  
-git push origin gh-pages
 ```
 --
 
-#Every time afterwards
+##You should now have an origin and an upstream remote
 
 ```bash
-git fetch upstream
-git checkout gh-pages
-git merge upstream/gh-pages  
-git push origin gh-pages
+git remote -v #checks for the remotes
+```
+![img-center-100](../images/github_remote_check.png)
+
+---
+
+
+
+#When you start an assignment or want to refresh the code
+
+```bash
+git fetch upstream #fetches changes to the upstream repository
+git checkout gh-pages #checkout your local gh-pages branch
+git merge upstream/gh-pages #merges the changes with the upstream gh-pages
+git push origin gh-pages #pushes the merged version to the remote (origin) repository
 ```
 ---
 
-class:center,middle
 #Make your changes and commit the result
++ `git status` will show the tracked files that have changes and the untracked files (see [the docs for more info](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository))
++ `git add <filename>` the file you want to commit changes of
++ `git commit -m'my commit message'` to commit the changes
++ `git push` to push changes to **your** remote repository
 
 ---
 
 # Key things
---
-
 + If you're using an example `.ipynb` file, create a duplicate, don't rename it
---
-
 + Name your file properly
---
-
 + `<last>_<first>_<class_num>_<assign_numb>.ipynb`
---
-
 + Ex. `dunks_richard_1_1.ipynb`
---
-
 + .red[If you don't label it right, you didn't do it]
 
 ---
@@ -85,12 +85,12 @@ class:center,middle
 ---
 
 #Open a pull request
-![img-center-90](../images/github_pull3.png)
+![img-center-100](../images/github_pull3_box.png)
 
 ---
 
 #Open a pull request
-![img-center-90](../images/github_pull3_box.png)
+![img-center-90](../images/github_pull4_box.png)
 
 ---
 
@@ -101,6 +101,7 @@ class:center,middle
 
 #References
 + [Github Help "Syncing a Fork"](https://help.github.com/articles/syncing-a-fork/)
++ [Pull Requests from the commandline](https://hub.github.com/)
 
     </textarea>
     <script src="../js/remark-latest.min.js">
