@@ -179,7 +179,11 @@ class:center,middle
 
 --
 
-![img-center-55](../images/set1.png)
+```python
+s = set("lede algorithms")
+print(s)
+{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
+```
 
 ---
 
@@ -197,7 +201,40 @@ class:center,middle
 
 + When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
 
+---
 
+#Set example
+```python
+s = set("lede algorithms")
+print(s)
+{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
+
+c = set("columbia")
+print(c)
+{'a', 'b', 'c', 'i', 'l', 'm', 'o', 'u'}
+
+print(c - s)
+{'c', 'b', 'u'}
+```
+
+---
+
+#Set functions
+--
+
++ `add(value)` - adds value to set
+--
+
++ `remove(value)` - removes the value; if not present raises key error
+--
+
++ `discard(value)` - discards the value if present in the set
+--
+
++ `pop()` - removes an arbitrary set element
+--
+
++ use for loop to access all the elements (can't index)
 ---
 
 #Another example
