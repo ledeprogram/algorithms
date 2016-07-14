@@ -25,34 +25,39 @@ class: center,middle
 
 ---
 
+#Do Now
+![img-right-30](http://www.math.fsu.edu/~wooland/hm2ed/Part3Module9/Sol4/graphics/Sol41.jpeg)
++ [Fetch from the upstream repository](tutorials/github_submit.html#4)
++ Create a function to calculate the volume of a sphere
++ Ensure you check for r < 0 and handle the case
++ Use `from math import pi`
++ Commit this file into the donow folder with `<lastname>_<firstname>_2_donow.ipynb` and push to your repo
++ Submit a PR for the Do Now
+
+---
+
 # Goals for Today
 --
 
 + Review git, Github, and the homework submission process
-+ Review the assignments
-+ Review the reading assignment
-+ Review sets
-+ Discuss the design process for algorithms using pseudocode
-+ Introduce sorting algorithms
-+ Discuss the analysis of algorithms
-
----
-
-#Outcomes
 --
 
++ Review the exercises
+--
 
++ Review the reading assignment
+--
 
----
++ Review sets and control flow in Python
+--
 
-#Problems with Github
-+ Not following the naming convention
-+ Committing files you shouldn't have
-+ Overwriting the Exercise files
-+ Trying to merge with the wrong branch
++ Discuss the design process for algorithms using pseudocode
+--
 
++ Introduce sorting algorithms
+--
 
----
++ Discuss the analysis of algorithms (if time)
 
 ---
 
@@ -162,6 +167,76 @@ class:center,middle
 ---
 
 class:center,middle
+#Let's talk about the assignments
+
+---
+
+#Problems with submitting assignments
+--
+
++ Not following the naming convention
+--
+
++ Committing files you shouldn't have
+--
+
++ Overwriting the Exercise files
+--
+
++ Trying to merge with the wrong branch
+
+---
+
+#Changes I made
+--
+
++ Updated the [`.gitignore`](https://github.com/ledeprogram/algorithms/blob/gh-pages/.gitignore)
+--
+
++ Revised the [Github tutorial](tutorials/github_submit.html)
+--
+
++ Anything else?
+
+---
+
+#Assignment 1
++ Write a function that takes in a list of numbers and outputs the mean of the numbers using the formula for mean. Do this without any built-in functions like `sum()`, `len()`, and, of course, `mean()`
+
+![img-center-90](../images/mean_form.png)
+
+---
+
+#Assignment 2
++ Create your own version of the [Mayoral Excuse Machine](http://dnain.fo/1CCHKmI) in Python that takes in a name and location, selects an excuse at random and prints an excuse (“Sorry, Richard, I was late to City Hall to meet you, I had a very rough night and woke up sluggish”)
++ Use the “[excuses.csv](homework/data/excuse.csv)” in the Github repository
++ Extra credit if you print the link to the story as well
+
+---
+
+#Assignment 3
++ Modify the code below ([in the repository](homework/Exercise3.ipynb)) that prints every prime number between 1 and 100 to only print every other prime number
++ Extra credit if you can modify the code to speed it up
+
+```python
+for num in range(1,101):
+    prime = True
+    for i in range(2,num):
+        if (num%i==0):
+            prime = False
+    if prime:
+        print(num)
+```
+
+---
+
+#Assignment 4
++ The code in [Exercise4.ipynb](homework/Exercise4.ipynb) is meant to search for New York Times articles on gay marriage and look at the mean and median word count, but the code has some problems
++ Follow the instructions in the notebook to fix the code and submit your fixed code
+
+---
+
+class:center,middle
 #Data Structures Redux
 
 ---
@@ -234,7 +309,107 @@ print(c - s)
 + `pop()` - removes an arbitrary set element
 --
 
-+ use for loop to access all the elements (can't index)
++ use `for` loop to access all the elements (can't index)
+
+---
+
+#For more information on data structures
++ [Tutsplus Advanced Data Structures](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
++ [Pythoncourse.eu Sets and Frozensets](http://www.python-course.eu/sets_frozensets.php)
+
+---
+
+class:center,middle
+#Control Flow
+
+---
+
+#Control Statements
+--
+
++ Manages order of program operation
+--
+
++ Helps program make a decision based on conditions
+--
+
++ Any computable operation can be replicated with a mix of three control statements (sequence, selection, and iteration)
+
+---
+
+#Sequence
+--
+
++ The order of functions in a program
+--
+
++ Most basic form of control flow
+
+---
+
+#Conditional statement (selection)
+--
+
++ `if <logical test>:` code executes only if the logical test is `True` 
+--
+
++ `elif <logical test>:` tests for an additional condition (can have an unlimited number)
+--
+
++ `else:` optional default if none of the other tests are true
+--
+
+```python
+temp = 70
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#For Loops (iteration)
+--
+
++ Loops through sequence of values
+--
+
++ Assign a temporary value that takes on the element from the sequence
+--
+
++ For use within the body of the loop
+--
+
++ Temporary value is reassigned with next value from sequence
+--
+
+```python
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+    print(w)
+```
+
+---
+
+#While Loops (iteration)
+
+
+
+---
+
+class:center
+#10 Min Break
+![img-center-40](http://imgs.xkcd.com/comics/git.png)
+Source: http://xkcd.com/1597/
+
+
 ---
 
 #Another example
@@ -297,13 +472,6 @@ def grader(students_grade):
 >People who analyze algorithms have double happiness. First of all they experience the sheer beauty of elegant mathematical patterns that surround elegant computational procedures. Then they receive a practical payoff when their theories make it possible to get other jobs done more quickly and more economically.
 
 -[Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/aa.html)
-
----
-
-class:center
-#10 Min Break
-![img-center-70](http://imgs.xkcd.com/comics/git.png)
-Source: http://xkcd.com/1597/
 
 ---
 
