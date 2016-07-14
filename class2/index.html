@@ -493,7 +493,16 @@ Source: http://xkcd.com/1597/
 + Test of an algorithm
 
 --
-##This is what a "real" algorithms class would be like
+
+##A "real" algorithms class would focus on each of these things intensely
+--
+
+##We won't be doing that
+
+---
+
+class:center,middle
+#Design of an algorithm
 
 ---
 
@@ -578,8 +587,92 @@ class:center,middle
 
 ---
 
+#Validating an algorithm
+--
+
++ Ensure algorithm computes correct answer for all legal inputs
+--
+
++ Usually a mathematical process involving some proof of correctness
+--
+
++ Called "program proving" or "program verification"
+--
+
++ It ensures the logic is correct
+--
+
++ Why is this important?
+
+---
+
+#Analyzing an algorithm
+--
+
++ Determine how much computing space and computing time an algorithm will take for a given number of inputs
+--
+
++ More inputs require more space and time to compute
+--
+
++ The design of the operation will increase the complexity
+--
+
++ We can estimate beforehand or test afterward
+--
+
++ In some cases it's better to estimate than test
+
+---
+
+#Estimating complexity
++ What is the time complexity of this?
+
+```python
+#takes in a list of numbers (a) and sums them together
+def sum(a):
+    sum = 0
+    for n in a:
+        sum += n
+    return sum
+```
+
+---
+
+#Estimating complexity
++ What about the time complexity of this?
+```python
+#takes in a list of numbers (a) and multiplies each element by the other elements in the list
+#assigns that value to the original position in the list
+def multiply_list_element(a):
+        for i in range(a):
+            sum = 0
+            for j in range(a):
+                if i != j:
+                    sum += a[i] * a[j]
+            a[i] = sum
+```
+
+---
+
+#Estimating complexity
++ We can estimate the worst-case, best-case, or average-case
+--
+
++ We generally use the average-case (called Big-O)
+--
+
++ We can then compare based on the average case for a given input size
+
+---
+
 #Estimating complexity
 ![img-center-100](http://i.stack.imgur.com/WcBRI.png)
+
+---
+
+#Wish we were doing these calculations?
+![img-center-80](../images/algo_calc.jpg)
 
 ---
 
@@ -588,6 +681,10 @@ class:center,middle
 >###People who analyze algorithms have double happiness. First of all they experience the sheer beauty of elegant mathematical patterns that surround elegant computational procedures. Then they receive a practical payoff when their theories make it possible to get other jobs done more quickly and more economically.
 
 ###-[Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/aa.html)
+
+---
+class:middle
+![img-center-55](../images/impressed.jpg)
 
 ---
 
@@ -606,6 +703,13 @@ class:center,middle
 #Assignment 2
 + Implement the search algorithm you came up with in pseudocode with Python
 + Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#One last thing...
+--
+
+##Please don't call me "professor"
 
 ---
 class:center,middle
