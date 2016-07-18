@@ -43,6 +43,9 @@ class: center,middle
 + Review branching
 --
 
++ Review control flow statements
+--
+
 + Discuss the design process for algorithms using pseudocode
 --
 
@@ -149,7 +152,7 @@ else:
 #Conditional statement in Python (selection)
 + Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
 ```python
-temp = 70
+temp = 25
 if temp < 30:
         print("It's really cold!")
 elif temp < 65:
@@ -157,6 +160,24 @@ elif temp < 65:
 elif temp > 100:
         print("It's really hot")
 elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#Conditional statement in Python (selection)
++ This will have a very different result
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+if temp < 65:
+        print("It's cold!")
+if temp > 100:
+        print("It's really hot")
+if temp > 85:
         print("It's hot!")
 else:
         print("The temperature is fine")
