@@ -53,9 +53,19 @@ git push origin gh-pages #pushes the merged version to the remote (origin) repos
 ```
 ---
 
+#Create a branch to work in
++ `git checkout -b <branch_name>` creates a new branch locally
++ For assignments, name your branch `<github_username>_assignment_<number>`
++ For do nows, name your branch `<github_username>_donow_<number>`
++ When you `git push`, you'll get an error telling you to set the branch
++ `git push --set-upstream <branch_name>`
+
+---
+
 #Make your changes and commit the result
 + `git status` will show the tracked files that have changes and the untracked files (see [the docs for more info](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository))
 + `git add <filename>` the file you want to commit changes of
++ .red[Don't use `git add .`]
 + `git commit -m'my commit message'` to commit the changes
 + `git push` to push changes to **your** remote repository
 
@@ -77,10 +87,12 @@ git push origin gh-pages #pushes the merged version to the remote (origin) repos
 - - -
 ![img-center-100](../images/github_pull2_box.png)
 
-##Make sure 
-+ base fork is `ledeprogram/algorithms` 
-+ base is `gh-pages`
+---
 
+#Make sure 
+![img-center-100](../images/github_pull2_box.png)
++ Base fork is `ledeprogram/algorithms` and base is `gh-pages`
++ Can merge out of your branch (don't have to merge with your `gh-pages` before opening a PR)
 
 ---
 
