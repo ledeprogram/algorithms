@@ -19,20 +19,19 @@ class: center,middle
 
 ![img-center-50](../images/cl_logo.png)
 - - -
-#Algorithms: How I Learned Collaborating In Code Can Be Fun
+#Algorithms: Got Branch?
 ##Richard Dunks, Instructor
-###Follow along: http://bit.ly/algo2016-class2
+###Follow along: http://bit.ly/algo2016-class3
 
 ---
 
 #Do Now
-![img-right-20](http://www.math.fsu.edu/~wooland/hm2ed/Part3Module9/Sol4/graphics/Sol41.jpeg)
 + [Fetch from the upstream repository](../tutorials/github_submit.html#4)
-+ Create a function to calculate the volume of a sphere
-+ Ensure you check for r < 0 and handle the case
-+ Use `from math import pi`
-+ Save this file into the folder `algorithms/class2/donow` with `<lastname>_<firstname>_2_donow.ipynb` 
-+ Commit and push to your repo
++ Type `git checkout -b <github_name>_donow3`
++ Create a function to search a list of numbers for a given number and return the index of that number in the list
++ Don't use any built in Python functions like `index()`
++ Save this file into the folder `algorithms/class3/donow` with `<lastname>_<firstname>_3_donow.ipynb` 
++ Commit and push to your repo (you'll need to type `git push --set-upstream <github_name>_donow3`)
 + Submit a PR for the Do Now
 
 ---
@@ -40,123 +39,20 @@ class: center,middle
 # Goals for Today
 --
 
-+ Review the reading assignment
++ Review branching
 --
 
-+ Review git, Github, and the homework submission process
---
-
-+ Review the exercises
---
-
-+ Review sets and control flow in Python
++ Review control flow statements
 --
 
 + Discuss the design process for algorithms using pseudocode
 --
 
-+ Introduce sorting algorithms
++ Introduce sorting and search algorithms
 --
 
-+ Discuss the analysis of algorithms (if time)
++ Discuss the analysis of algorithms
 
----
-
-class:center,middle
-#So what did you think of [the reading](https://medium.com/@darrenrovell/all-journalists-need-to-be-data-driven-6dfc73e420d5#.v4dp0faeu)?
-
----
-
-class:center,middle
-#Introduction to Git
-
----
-
-class:center,middle
-#Why Git?
-
----
-
-class:center,middle
-![img-center-100](../images/git1.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git2.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git3.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git4.png)
-
----
-
-class:center,middle
-#Collaborating with Git
-
----
-
-class:center,middle
-![img-center-100](../images/git5.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git6.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git7.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git8.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git9.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git10.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git11.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git12.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git13.png)
-
----
-class:center
-#Git Workflow
-![img-center-100](../images/git14.png)
-
----
-
-#Forking
-[![img-center-55](http://i.stack.imgur.com/yPKXU.png)](http://stackoverflow.com/a/3611349/1808021)
-
-Source: StackOverflow user [vonc](http://stackoverflow.com/users/6309/vonc)
-and licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 
 ---
 
 #Branching
@@ -166,176 +62,35 @@ and licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0
 
 ---
 
-class:center,middle
-#Still not clear on branching and forking?
-##[Check out this description](https://confluence.atlassian.com/bitbucket/branch-or-fork-your-repository-221450630.html)
-##[And this Stack Overflow response](http://stackoverflow.com/a/3611349/1808021)
+#Branching commands
+--
+
++ `git checkout -b <branch_name>` creates a new branch locally
+--
+
++ Add your commits like normal (remember not to use `git add .`)
+--
+
++ `git push --set-upstream <branch_name>` creates branch on remote (git will prompt you if you forget, I always do)
+--
+
++ `git checkout <branch_name>` to switch to an existing branch
+
+---
+
+#Create your assignment 3 branch
++ `git checkout -b <github_username>_assignment_3`
++ Make a simple commit in the homework folder
++ `git push --set-upstream <github_username>_assignment_3`
+
+--
+
+##Any questions
 
 ---
 
 class:center,middle
-#Can we start branching in assignments?
-
----
-
-class:center,middle
-#Let's talk about the assignments
-
----
-
-#Problems with submitting assignments
---
-
-+ Not following the naming convention (`<last>_<first>_<class>_<assign>.ipynb`)
---
-
-+ Committing files you shouldn't have (only `git add` the files you want updated)
---
-
-+ Overwriting the Exercise files (don't do that)
---
-
-+ Trying to merge with the wrong branch (should be gh-pages)
-
----
-
-#Changes I made
---
-
-+ Updated the [`.gitignore`](https://github.com/ledeprogram/algorithms/blob/gh-pages/.gitignore)
---
-
-+ Revised the [Github tutorial](../tutorials/github_submit.html)
---
-
-+ Anything else?
-
----
-
-#Assignment 1
-+ Write a function that takes in a list of numbers and outputs the mean of the numbers using the formula for mean. Do this without any built-in functions like `sum()`, `len()`, and, of course, `mean()`
-
-![img-center-90](../images/mean_form.png)
-
----
-
-#Assignment 2
-+ Create your own version of the [Mayoral Excuse Machine](http://dnain.fo/1CCHKmI) in Python that takes in a name and location, selects an excuse at random and prints an excuse (“Sorry, Richard, I was late to City Hall to meet you, I had a very rough night and woke up sluggish”)
-+ Use the “[excuses.csv](homework/data/excuse.csv)” in the Github repository
-+ Extra credit if you print the link to the story as well
-
----
-
-#Assignment 3
-+ Modify the code below ([in the repository](homework/Exercise3.ipynb)) that prints every prime number between 1 and 100 to only print every other prime number
-+ Extra credit if you can modify the code to speed it up
-
-```python
-for num in range(1,101):
-    prime = True
-    for i in range(2,num):
-        if (num%i==0):
-            prime = False
-    if prime:
-        print(num)
-```
-
----
-
-#Assignment 4
-+ The code in [Exercise4.ipynb](homework/Exercise4.ipynb) is meant to search for New York Times articles on gay marriage and look at the mean and median word count, but the code has some problems
-+ Follow the instructions in the notebook to fix the code and submit your fixed code
-
----
-
-class:center,middle
-#Data Structures Redux
-
----
-
-#Sets
---
-
-+ An unordered collection with no duplicate values
---
-
-+ Created using the keyword “set”
---
-
-+ More limited in the types of objects that can be included (stick with basic types)
---
-
-+ Think of it like a bag of things you toss values into without needing to get them out in any order
-
---
-
-```python
-s = set("lede algorithms")
-print(s)
-{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
-```
-
----
-
-#When to use sets
---
-
-+ When you only need unique values
---
-
-+ When the data types you’re working with are relatively basic (hashable)
---
-
-+ When your data changes
---
-
-+ When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
-
----
-
-#Set example
-```python
-s = set("lede algorithms")
-print(s)
-{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
-
-c = set("columbia")
-print(c)
-{'a', 'b', 'c', 'i', 'l', 'm', 'o', 'u'}
-
-print(c - s)
-{'c', 'b', 'u'}
-```
-
----
-
-#Set functions
---
-
-+ `add(value)` - adds value to set
---
-
-+ `remove(value)` - removes the value; if not present raises key error
---
-
-+ `discard(value)` - discards the value if present in the set
---
-
-+ `pop()` - removes an arbitrary set element
---
-
-+ use `for` loop to access all the elements (can't index)
-
----
-
-#For more information on data structures
-+ [Tutsplus Advanced Data Structures](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
-+ [Pythoncourse.eu Sets and Frozensets](http://www.python-course.eu/sets_frozensets.php)
-
----
-
-class:center,middle
-#Control Flow
+#Control Flow Review
 
 ---
 
@@ -407,7 +162,7 @@ else:
 #Conditional statement in Python (selection)
 + Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
 ```python
-temp = 70
+temp = 25
 if temp < 30:
         print("It's really cold!")
 elif temp < 65:
@@ -415,6 +170,24 @@ elif temp < 65:
 elif temp > 100:
         print("It's really hot")
 elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#Conditional statement in Python (selection)
++ This will have a very different result
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+if temp < 65:
+        print("It's cold!")
+if temp > 100:
+        print("It's really hot")
+if temp > 85:
         print("It's hot!")
 else:
         print("The temperature is fine")
