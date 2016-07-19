@@ -19,144 +19,45 @@ class: center,middle
 
 ![img-center-50](../images/cl_logo.png)
 - - -
-#Algorithms: How I Learned Collaborating In Code Can Be Fun
+#Algorithms: Got Branch?
 ##Richard Dunks, Instructor
-###Follow along: http://bit.ly/algo2016-class2
+###Follow along: http://bit.ly/algo2016-class3
 
 ---
 
 #Do Now
-![img-right-20](http://www.math.fsu.edu/~wooland/hm2ed/Part3Module9/Sol4/graphics/Sol41.jpeg)
 + [Fetch from the upstream repository](../tutorials/github_submit.html#4)
-+ Create a function to calculate the volume of a sphere
-+ Ensure you check for r < 0 and handle the case
-+ Use `from math import pi`
-+ Save this file into the folder `algorithms/class2/donow` with `<lastname>_<firstname>_2_donow.ipynb` 
-+ Commit and push to your repo
++ Type `git checkout -b <github_name>_donow3`
++ Create a function to search a list of numbers for a given number and return the index of that number in the list
++ Don't use any built in Python functions like `index()`
++ Save this file into the folder `algorithms/class3/donow` with `<lastname>_<firstname>_3_donow.ipynb` 
++ Commit and push to your repo (you'll need to type `git push --set-upstream <github_name>_donow3`)
 + Submit a PR for the Do Now
+
+---
+
+#Reading
++ "[Why self driving cars must be programmed to kill](https://www.technologyreview.com/s/542626/why-self-driving-cars-must-be-programmed-to-kill/)"
 
 ---
 
 # Goals for Today
 --
 
-+ Review the reading assignment
++ Review branching
 --
 
-+ Review git, Github, and the homework submission process
---
-
-+ Review the exercises
---
-
-+ Review sets and control flow in Python
++ Review control flow statements
 --
 
 + Discuss the design process for algorithms using pseudocode
 --
 
-+ Introduce sorting algorithms
++ Introduce sorting and search algorithms
 --
 
-+ Discuss the analysis of algorithms (if time)
++ Discuss the analysis of algorithms
 
----
-
-class:center,middle
-#So what did you think of [the reading](https://medium.com/@darrenrovell/all-journalists-need-to-be-data-driven-6dfc73e420d5#.v4dp0faeu)?
-
----
-
-class:center,middle
-#Introduction to Git
-
----
-
-class:center,middle
-#Why Git?
-
----
-
-class:center,middle
-![img-center-100](../images/git1.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git2.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git3.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git4.png)
-
----
-
-class:center,middle
-#Collaborating with Git
-
----
-
-class:center,middle
-![img-center-100](../images/git5.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git6.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git7.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git8.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git9.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git10.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git11.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git12.png)
-
----
-
-class:center,middle
-![img-center-100](../images/git13.png)
-
----
-class:center
-#Git Workflow
-![img-center-100](../images/git14.png)
-
----
-
-#Forking
-[![img-center-55](http://i.stack.imgur.com/yPKXU.png)](http://stackoverflow.com/a/3611349/1808021)
-
-Source: StackOverflow user [vonc](http://stackoverflow.com/users/6309/vonc)
-and licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 
 ---
 
 #Branching
@@ -166,176 +67,51 @@ and licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0
 
 ---
 
-class:center,middle
-#Still not clear on branching and forking?
-##[Check out this description](https://confluence.atlassian.com/bitbucket/branch-or-fork-your-repository-221450630.html)
-##[And this Stack Overflow response](http://stackoverflow.com/a/3611349/1808021)
+#Branching commands
+--
+
++ `git checkout -b <branch_name>` creates a new branch locally
+--
+
++ Add your commits like normal (remember not to use `git add .`)
+--
+
++ `git push --set-upstream <branch_name>` creates branch on remote (git will prompt you if you forget, I always do)
+--
+
++ `git checkout <branch_name>` to switch to an existing branch
+
+---
+
+#Create your assignment 3 branch
++ `git checkout -b <github_username>_assignment_3`
++ Make a simple commit in the homework folder
++ `git push --set-upstream <github_username>_assignment_3`
+
+---
+
+#Notes on your pull requests
+--
+
++ Briefly describe any issues, concerns, or questions you had
+--
+
++ Feel free to provide feedback on the assignments
+--
+
++ Tag me ([@datapolitan](https://github.com/datapolitan)) or the TAs ([@rashidakamal](https://github.com/rashidakamal) / [@bisaha](https://github.com/bisaha)) if you have anything you want us to look at
+
 
 ---
 
 class:center,middle
-#Can we start branching in assignments?
+#Any questions?
+![img-center-80](https://i.kinja-img.com/gawker-media/image/upload/tc73ipektqvytz9l32xy.gif)
 
 ---
 
 class:center,middle
-#Let's talk about the assignments
-
----
-
-#Problems with submitting assignments
---
-
-+ Not following the naming convention (`<last>_<first>_<class>_<assign>.ipynb`)
---
-
-+ Committing files you shouldn't have (only `git add` the files you want updated)
---
-
-+ Overwriting the Exercise files (don't do that)
---
-
-+ Trying to merge with the wrong branch (should be gh-pages)
-
----
-
-#Changes I made
---
-
-+ Updated the [`.gitignore`](https://github.com/ledeprogram/algorithms/blob/gh-pages/.gitignore)
---
-
-+ Revised the [Github tutorial](../tutorials/github_submit.html)
---
-
-+ Anything else?
-
----
-
-#Assignment 1
-+ Write a function that takes in a list of numbers and outputs the mean of the numbers using the formula for mean. Do this without any built-in functions like `sum()`, `len()`, and, of course, `mean()`
-
-![img-center-90](../images/mean_form.png)
-
----
-
-#Assignment 2
-+ Create your own version of the [Mayoral Excuse Machine](http://dnain.fo/1CCHKmI) in Python that takes in a name and location, selects an excuse at random and prints an excuse (“Sorry, Richard, I was late to City Hall to meet you, I had a very rough night and woke up sluggish”)
-+ Use the “[excuses.csv](homework/data/excuse.csv)” in the Github repository
-+ Extra credit if you print the link to the story as well
-
----
-
-#Assignment 3
-+ Modify the code below ([in the repository](homework/Exercise3.ipynb)) that prints every prime number between 1 and 100 to only print every other prime number
-+ Extra credit if you can modify the code to speed it up
-
-```python
-for num in range(1,101):
-    prime = True
-    for i in range(2,num):
-        if (num%i==0):
-            prime = False
-    if prime:
-        print(num)
-```
-
----
-
-#Assignment 4
-+ The code in [Exercise4.ipynb](homework/Exercise4.ipynb) is meant to search for New York Times articles on gay marriage and look at the mean and median word count, but the code has some problems
-+ Follow the instructions in the notebook to fix the code and submit your fixed code
-
----
-
-class:center,middle
-#Data Structures Redux
-
----
-
-#Sets
---
-
-+ An unordered collection with no duplicate values
---
-
-+ Created using the keyword “set”
---
-
-+ More limited in the types of objects that can be included (stick with basic types)
---
-
-+ Think of it like a bag of things you toss values into without needing to get them out in any order
-
---
-
-```python
-s = set("lede algorithms")
-print(s)
-{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
-```
-
----
-
-#When to use sets
---
-
-+ When you only need unique values
---
-
-+ When the data types you’re working with are relatively basic (hashable)
---
-
-+ When your data changes
---
-
-+ When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
-
----
-
-#Set example
-```python
-s = set("lede algorithms")
-print(s)
-{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
-
-c = set("columbia")
-print(c)
-{'a', 'b', 'c', 'i', 'l', 'm', 'o', 'u'}
-
-print(c - s)
-{'c', 'b', 'u'}
-```
-
----
-
-#Set functions
---
-
-+ `add(value)` - adds value to set
---
-
-+ `remove(value)` - removes the value; if not present raises key error
---
-
-+ `discard(value)` - discards the value if present in the set
---
-
-+ `pop()` - removes an arbitrary set element
---
-
-+ use `for` loop to access all the elements (can't index)
-
----
-
-#For more information on data structures
-+ [Tutsplus Advanced Data Structures](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
-+ [Pythoncourse.eu Sets and Frozensets](http://www.python-course.eu/sets_frozensets.php)
-
----
-
-class:center,middle
-#Control Flow
+#Control Flow Review
 
 ---
 
@@ -390,7 +166,7 @@ class:center,middle
 --
 
 ```python
-temp = 70
+temp = 25
 if temp < 30:
         print("It's really cold!")
 elif temp < 65:
@@ -407,7 +183,7 @@ else:
 #Conditional statement in Python (selection)
 + Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
 ```python
-temp = 70
+temp = 25
 if temp < 30:
         print("It's really cold!")
 elif temp < 65:
@@ -415,6 +191,24 @@ elif temp < 65:
 elif temp > 100:
         print("It's really hot")
 elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#Conditional statement in Python (selection)
++ This will have a very different result
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+if temp < 65:
+        print("It's cold!")
+if temp > 100:
+        print("It's really hot")
+if temp > 85:
         print("It's hot!")
 else:
         print("The temperature is fine")
@@ -472,10 +266,10 @@ print(n)
 
 ---
 
-class:center
+class:center,middle
 #10 Min Break
-![img-center-40](http://imgs.xkcd.com/comics/git.png)
-Source: http://xkcd.com/1597/
+![img-center-80](http://imgs.xkcd.com/comics/git_commit.png)
+Source: https://xkcd.com/1296/
 
 ---
 
@@ -558,20 +352,24 @@ def grader(students_grade):
 ---
 
 class:center,middle
-#Let's write some more algorithms
+#Let's write some more algorithms 
+#(in pseudocode)
 
 ---
 
 #Sort
 --
 
-+ Input: a list of values
++ Input: a list of integer values
 --
 
 + Operation: sort the list
 --
 
 + Output: a sorted list of values
+--
+
++ _Note: Don't worry about checking data types, assume they'll always be integers but design for other error conditions_
 
 ---
 
@@ -626,7 +424,51 @@ class:center,middle
 
 ---
 
-#Estimating complexity
+#Estimating space complexity
+--
+
++ Variables, functions, and objects take up space in memory
+--
+
++ Memory size varies by the type (Python handles for you)
+--
+
+
+```
+Bytes  type        empty + scaling notes
+24     int         NA
+28     long        NA
+37     str         + 1 byte per additional character
+52     unicode     + 4 bytes per additional character
+56     tuple       + 8 bytes per additional item
+72     list        + 32 for first, 8 for each additional
+232    set         sixth item increases to 744; 22nd, 2280; 86th, 8424
+280    dict        sixth item increases to 1048; 22nd, 3352; 86th, 12568
+64     class inst  has a __dict__ attr, same scaling as dict above
+16     __slots__   class with slots has no dict, seems to store in 
+                   mutable tuple-like structure.
+120    func def    doesn't include default args and other attrs
+904    class def   has a proxy __dict__ structure for class attrs
+104    old class   makes sense, less stuff, has real dict though.
+```
+[Source](http://stackoverflow.com/a/30316760/1808021)
+
+---
+
+#Estimating space complexity
+--
+
++ In general, reducing the space complexity of an algorithm will decrease run time
+--
+
++ In most cases, this isn't important given the state of technology
+--
+
++ Becomes clear when you get to larger scales
+
+---
+
+#Estimating time complexity
 + What is the time complexity of this?
 
 ```python
@@ -640,10 +482,11 @@ def sum(a):
 
 ---
 
-#Estimating complexity
+#Estimating time complexity
 + What about the time complexity of this?
 ```python
-#takes in a list of numbers (a) and multiplies each element by the other elements in the list
+#takes in a list of numbers (a) and multiplies each
+# element by the other elements in the list
 #assigns that value to the original position in the list
 def multiply_list_element(a):
         for i in range(a):
@@ -656,7 +499,7 @@ def multiply_list_element(a):
 
 ---
 
-#Estimating complexity
+#Estimating time complexity
 + We can estimate the worst-case, best-case, or average-case
 --
 
@@ -667,7 +510,7 @@ def multiply_list_element(a):
 
 ---
 
-#Estimating complexity
+#Estimating time complexity
 ![img-center-100](http://i.stack.imgur.com/WcBRI.png)
 
 ---
@@ -700,6 +543,33 @@ class:middle
 
 ---
 
+#Key Takeaways
+--
+
++ There will come a point when you need to be more thoughtful in your code
+--
+
++ Use pseudocode or other means to think through the operation you want to accomplish
+--
+
++ Try to minimize the number of variables and operations you're conducting to reduce complexity
+--
+
++ Just because it runs, it doesn't mean it's correct
+--
+
++ Test and verify before going into production (whatever that means for you)
+
+---
+
+#Want to know more?
++ Knuth, Donald E. <i>The Art of Computer Programming</i>. Addison-Wesley Professional, 2011.
++ Sedgewick, Robert and Kevin Wayne. <i>Algorithms</i>. Addison-Wesley Professional, 2011. 
++ They also have a [Coursera course](https://www.coursera.org/learn/introduction-to-algorithms). [This Coursera course](https://www.coursera.org/learn/algorithm-design-analysis) is more theoretical
++ Another 
+
+---
+
 class:center,middle
 #Questions?
 
@@ -708,7 +578,8 @@ class:center,middle
 #Readings
 + Hon, Keone. “[An Introduction to Statistics.](../class3/reading/statistics_firstfive.pdf)” Ch. 1 and 2.
 + Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
-+ "[Why self driving cars must be programmed to kill](https://www.technologyreview.com/s/542626/why-self-driving-cars-must-be-programmed-to-kill/)"
++ ["Netflix knows exactly how long you’ll look for something to watch before giving up" Quartz](http://qz.com/622316/netflix-knows-exactly-how-long-youll-look-for-something-to-watch-before-giving-up/)
+
 
 ---
 
