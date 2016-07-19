@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: How I Learned the Significance of Correlation
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class4
+
+---
+
+#Do Now
+
+---
+
+#Assignment Review
+
+---
+
+#Goals
+--
+
++ Review statistics 
+--
+
++ Discuss exploratory data analysis
+--
+
++ Practice performing statistical analysis in Python using pandas
+
+---
+
+#Reading Review
+
+---
+
+class:center,middle
+#Introduction to Statistics
+
+---
+class:center,middle
+> We are drowning in information and starving for knowledge.
+
+##Rutherford D. Roger
+
+---
+
+#Why Statistics?
+--
+
++ Tools for extracting meaning from data
+--
+
++ Commonly understood ways of communicating meaning to others
+
+---
+
+#Histogram
+--
+
++ Charts the frequency of instances in the data
+--
+
++ Shows the frequency distribution
+--
+
++ Values are grouped into class intervals
+--
+
++ Best to have a consistent size to class intervals
+--
+
+
+![img-left-45](../images/hist1.png)
+--
+
+![img-right-45](../images/hist2.png)
+
+####http://mathematica.stackexchange.com/questions/59520/histogram-with-variable-bin-size
+
+---
+
+class:center,middle
+#Distributions of Data
+
+---
+
+#Normal Distribution
+![img-center-80](../images/dist_normal.png)
+
+---
+
+#Long-tail Distribution
+![img-center-80](../images/dist_lt.png)
+
+---
+
+#Bi-Modal Distribution
+![img-center-100](../images/dist_bm.png)
+
+---
+
+#Mean
+--
+
++ A representative value for the data
+--
+
++ Usually what people mean by “average”
+--
+
++ Calculate by adding all the values together and dividing by the number instances
+--
+
++ Sensitive to extremes
+
+---
+
+#Median
+--
+
++ The “middle” value of a data set
+--
+
++ Center value of a data set with an odd number of values
+--
+
++ Sum of two middle values divided by 2 if the number of items in a data set is even
+--
+
++ Resistant to extreme values
+--
+
+![img-center-100](../images/median_balance.png)
+
+---
+
+#Median vs Mean
+![img-center-100](../images/mean_vs_median.png)
+
+---
+
+#Mode
+--
+
++ The most frequent value in a dataset
+--
+
++ Often used for categorical data
+--
+
+![img-center-50](../images/mode.png)
+
+---
+
+#Measures of Central Tendency
+--
+
++ Quantitative data tends to cluster around some central value
+--
+
++ Contrasts with the spread of data around that center (i.e. the variability in the data)
+--
+
++ Mean is a more precise measure and more often used
+--
+
++ Median is better when there are extreme outliers
+--
+
++ Mode is used when the data is categorical (as opposed to numeric)
+
+---
+
+class:center,middle
+#Measuring Variability
+
+---
+
+#Range
+--
+
++ The gap between the minimum value and the maximum value
+--
+
++ Calculated by subtracting the minimum from the maximum
+
+---
+
+#Quantiles
+--
+
++ Median splits the data set into two equal groups
+--
+
++ Quartiles split the data into four equal groups
+--
+
++ First quartile is 0-25% of the data
+--
+
++ Second quartile is 25-50% of the data
+--
+
++ Third quartile is 50-75% of the data
+--
+
++ Fourth quartile is 75-100% of the data
+
+---
+
+#Interquartile Range
+--
+
++ “Middle” 50% of data (between 1st Quartile and 3rd Quartile)
+--
+
+![img-center-80](../images/iqr.png)
+
+---
+
+#Outliers
+--
+
++ Any data points less than 1.5x the IQR or greater than 1.5x the IQR are considered outliers
+--
+
++ Helps identify data points that may skew the analysis
+--
+
++ Focus on the “meat” of the data
+
+---
+
+#Outliers
+![img-center-35](../images/outlier.png)
+http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/ 
+
+---
+
+#Standard Deviation
+--
+
++ The average distance of each data point from the mean
+--
+
++ Larger the standard deviation, the greater the spread
+--
+
+![img-center-100](../images/std1.png)
+
+---
+
+#Measures of Variability
+--
+
++ Describe the distribution of our data
+--
+
++ Range (Maximum – Minimum)
+--
+
++ Inter-quartile Range
+--
+
++ Standard Deviation
+--
+
++ Identification of outliers (1.5 x IQR)
+
+---
+
+#Descriptive Statistics
+--
+
++ Quantitatively describe the main features of a dataset
+--
+
++ Help distinguish distributions and make them comparable
+
+---
+
+#Exploratory Data Analysis
+--
+
++ Goal -> Discover patterns in the data
+--
+
++ Understand the context
+--
+
++ Summarize fields
+--
+
++ Use graphical representations of the data
+--
+
++ Explore outliers
+
+--
+
+###Tukey, J.W. (1977). Exploratory data analysis. Reading, MA: Addison-Wesley.
+
+---
+
+#Correlations
+![img-center-100](../images/corr1.png)
+###How do we measure this relationship?
+
+---
+
+#Coefficient of Correlation
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
++ Positive numbers are directly proportional
+
+---
+
+#Coefficient of Correlation
++ Quantifies the amount of shared variability between variables
++ Ranges between -1 and +1 
++ Negative numbers are inversely proportional
++ Positive numbers are directly proportional
++ The closer to either -1 or +1, the greater the correlation
+
+---
+
+#Coefficient of Correlation
+![img-center-100](../images/corr3.png)
+http://www.statisticshowto.com/what-is-the-correlation-coefficient-formula/
+
+
+---
+
+#Coefficient of Correlation
+![img-center-100](../images/corr2.png)
+
+http://pixshark.com/correlation-examples.htm 
+
+---
+
+#Correlations - Height and Weight
+![img-center-100](../images/corr1.png)
+###These are highly positively correlated (r=0.87779)
+
+---
+
+#Correlations - Recycling and Median Income
+![img-center-medium](../images/corr6.png)
+###These are even slightly more correlated (r=0.88478)
+
+http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-income-and
+
+---
+
+#Correlations
+![img-center-ml](../images/corr4.png)
+
+---
+
+#Correlations
+![img-center-100](../images/corr5.png)
+
+---
+
+#Correlations
+![img-center-100](../images/corr5.png)
+##Correlation does not imply causation
+
+---
+
+class:center,middle
+#Why am I doing this with you?
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>

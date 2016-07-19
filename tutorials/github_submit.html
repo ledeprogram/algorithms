@@ -11,7 +11,7 @@
 layout:true
 
 <p class="footer">
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms:Submitting Assignments with Github</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms: Submitting Assignments with Github</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
 </p>
 ---
 
@@ -53,9 +53,19 @@ git push origin gh-pages #pushes the merged version to the remote (origin) repos
 ```
 ---
 
+#Create a branch to work in
++ `git checkout -b <branch_name>` creates a new branch locally
++ For assignments, name your branch `<github_username>_assignment_<number>`
++ For do nows, name your branch `<github_username>_donow_<number>`
++ When you `git push`, you'll get an error telling you to set the branch
++ `git push --set-upstream <branch_name>`
+
+---
+
 #Make your changes and commit the result
 + `git status` will show the tracked files that have changes and the untracked files (see [the docs for more info](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository))
 + `git add <filename>` the file you want to commit changes of
++ .red[Don't use `git add .`]
 + `git commit -m'my commit message'` to commit the changes
 + `git push` to push changes to **your** remote repository
 
@@ -77,10 +87,12 @@ git push origin gh-pages #pushes the merged version to the remote (origin) repos
 - - -
 ![img-center-100](../images/github_pull2_box.png)
 
-##Make sure 
-+ base fork is `ledeprogram/algorithms` 
-+ base is `gh-pages`
+---
 
+#Make sure 
+![img-center-100](../images/github_pull2_box.png)
++ Base fork is `ledeprogram/algorithms` and base is `gh-pages`
++ Can merge out of your branch (don't have to merge with your `gh-pages` before opening a PR)
 
 ---
 
@@ -91,6 +103,13 @@ git push origin gh-pages #pushes the merged version to the remote (origin) repos
 
 #Open a pull request
 ![img-center-90](../images/github_pull4_box.png)
+
+---
+
+#Notes on your pull requests
++ Briefly describe any issues, concerns, or questions you had
++ Feel free to provide feedback on the assignments
++ Tag me ([@datapolitan](https://github.com/datapolitan)) or the TAs ([@rashidakamal](https://github.com/rashidakamal) / [@bisaha](https://github.com/bisaha)) if you have anything you want us to flag and look at
 
 ---
 
