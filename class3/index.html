@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: Got Branch?
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class3
+
+---
+
+#Do Now
++ [Fetch from the upstream repository](../tutorials/github_submit.html#4)
++ Type `git checkout -b <github_name>_donow3`
++ Create a function to search a list of numbers for a given number and return the index of that number in the list
++ Don't use any built in Python functions like `index()`
++ Save this file into the folder `algorithms/class3/donow` with `<lastname>_<firstname>_3_donow.ipynb` 
++ Commit and push to your repo (you'll need to type `git push --set-upstream origin <github_name>_donow3`)
++ Submit a PR for the Do Now
+
+---
+
+#Reading
++ "[Why self driving cars must be programmed to kill](https://www.technologyreview.com/s/542626/why-self-driving-cars-must-be-programmed-to-kill/)"
+
+---
+
+# Goals for Today
+--
+
++ Review branching
+--
+
++ Review control flow statements
+--
+
++ Discuss the design process for algorithms using pseudocode
+--
+
++ Introduce sorting and search algorithms
+--
+
++ Discuss the analysis of algorithms
+
+---
+
+#Branching
+[![img-center-100](https://confluence.atlassian.com/bitbucket/files/304578655/790630019/2/1449003550298/build_status_commits.png)](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html)
+
+[Source](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html), used under [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/legalcode)
+
+---
+
+#Branching commands
+--
+
++ `git checkout -b <branch_name>` creates a new branch locally
+--
+
++ Add your commits like normal (remember not to use `git add .`)
+--
+
++ `git push --set-upstream origin <branch_name>` creates branch on remote (git will prompt you if you forget, I always do)
+--
+
++ `git checkout <branch_name>` to switch to an existing branch
+
+---
+
+#Create your assignment 3 branch
++ `git checkout -b <github_username>_assignment_3`
++ Make a simple commit in the homework folder
++ `git push --set-upstream origin <github_username>_assignment_3`
+
+---
+
+#Notes on your pull requests
+--
+
++ Briefly describe any issues, concerns, or questions you had
+--
+
++ Feel free to provide feedback on the assignments
+--
+
++ Tag me ([@datapolitan](https://github.com/datapolitan)) or the TAs ([@rashidakamal](https://github.com/rashidakamal) / [@bisaha](https://github.com/bisaha)) if you have anything you want us to look at
+
+
+---
+
+class:center,middle
+#Any questions?
+![img-center-80](https://i.kinja-img.com/gawker-media/image/upload/tc73ipektqvytz9l32xy.gif)
+
+---
+
+class:center,middle
+#Control Flow Review
+
+---
+
+#Control Statements
+--
+
++ Manages order of program operation
+--
+
++ Helps program make a decision based on conditions
+--
+
++ Any computable operation can be replicated with a mix of three control statements (sequence, selection, and iteration)
+
+---
+
+#Sequence
+--
+
++ The order of functions in a program
+--
+
++ Most basic form of control flow
+--
+
++ Basically the thing you've been doing this whole time
+
+---
+
+#Conditional statement (selection)
+--
+
++ Code block only executes if some logical test is met
+--
+
++ Logical test can be as simple or complex as necessary
+--
+
++ Uses [Boolean logic](http://learnpythonthehardway.org/book/ex28.html)
+
+---
+
+#Conditional statement in Python (selection)
+
++ `if <logical test>:` code executes only if the logical test is `True` 
+--
+
++ `elif <logical test>:` tests for an additional condition (can have an unlimited number)
+--
+
++ `else:` optional default if none of the other tests are true
+--
+
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+---
+
+#Conditional statement in Python (selection)
++ Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#Conditional statement in Python (selection)
++ This will have a very different result
+```python
+temp = 25
+if temp < 30:
+        print("It's really cold!")
+if temp < 65:
+        print("It's cold!")
+if temp > 100:
+        print("It's really hot")
+if temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#For Loops (iteration)
+--
+
++ Loops through a set sequence of values
+--
+
++ Assign a temporary variable that takes on the element from the sequence
+--
+
++ Temporary variable used within the body of the loop
+--
+
++ Temporary variable is reassigned with next value from sequence
+--
+
+```python
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+        print(w)
+```
+
+---
+
+#While Loops (iteration)
++ Loops until a guard condition is met
+--
+
+```python
+n = 0
+while n < 5:
+        n += 1
+print(n)
+```
+--
+
++ What happens if I forgot the `n += 1`?
+--
+
+![img-center-70](http://i.giphy.com/HPASxeEylfHA4.gif)
+
+---
+
+#While Loops (iteration)
++ Use when the number of iterations is unknown
+--
+
++ Helps ensure a condition or variable state is achieved before moving on with code execution
+
+---
+
+class:center,middle
+#10 Min Break
+![img-center-80](http://imgs.xkcd.com/comics/git_commit.png)
+Source: https://xkcd.com/1296/
+
+---
+
+#Study of Algorithms
+--
+
++ Design of an algorithm
+--
+
++ Validation of an algorithm
+--
+
++ Analysis of an algorithm
+--
+
++ Test of an algorithm
+
+--
+
+##A "real" algorithms class would focus on each of these things intensely
+--
+
+##We won't be doing that
+
+---
+
+class:center,middle
+#Design of an algorithm
+
+---
+
+#Pseudocode
+--
+
++ An informal, high-level description of a process
+--
+
++ Describes the flow of an operation
+--
+
++ Similar to actual code
+--
+
++ Focus is on the execution rather than syntax
+--
+
++ Can create your own pseudocode style
+
+---
+
+#Pseudocode example
+
+```
+function grader
+    If student's grade is greater than or equal to 60
+        print "passed"
+    else
+        print "failed"
+```
+
+--
+
+##Notice this looks a lot like Python
+```python
+def grader(students_grade):
+    if students_grade >= 60:
+        print("passed")
+    else:
+        print("failed")
+```
+
+---
+
+#Another example
+
+<a title="By Walké (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AAddition.gif"><img width="45" alt="img-center-50" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Addition.gif"/></a>
+
+##How would we describe multi-digit addition in pseudocode?
+
+---
+
+class:center,middle
+#Let's write some more algorithms 
+#(in pseudocode)
+
+---
+
+#Sort
+--
+
++ Input: a list of integer values
+--
+
++ Operation: sort the list
+--
+
++ Output: a sorted list of values
+--
+
++ _Note: Don't worry about checking data types, assume they'll always be integers but design for other error conditions_
+
+---
+
+#Search
+--
+
++ Input: a sorted list and a search term
+--
+
++ Operation: find the element in the list
+--
+
++ Output: the location of the item in the list or indicate if it's not there
+
+---
+
+#Validating an algorithm
+--
+
++ Ensure algorithm computes correct answer for all legal inputs
+--
+
++ Usually a mathematical process involving some proof of correctness
+--
+
++ Called "program proving" or "program verification"
+--
+
++ It ensures the logic is correct
+--
+
++ Why is this important?
+
+---
+
+#Analyzing an algorithm
+--
+
++ Determine how much computing space and computing time an algorithm will take for a given number of inputs
+--
+
++ More inputs require more space and time to compute
+--
+
++ The design of the operation will increase the complexity
+--
+
++ We can estimate beforehand or test afterward
+--
+
++ In some cases it's better to estimate than test
+
+---
+
+#Estimating space complexity
+--
+
++ Variables, functions, and objects take up space in memory
+--
+
++ Memory size varies by the type (Python handles for you)
+--
+
+
+```
+Bytes  type        empty + scaling notes
+24     int         NA
+28     long        NA
+37     str         + 1 byte per additional character
+52     unicode     + 4 bytes per additional character
+56     tuple       + 8 bytes per additional item
+72     list        + 32 for first, 8 for each additional
+232    set         sixth item increases to 744; 22nd, 2280; 86th, 8424
+280    dict        sixth item increases to 1048; 22nd, 3352; 86th, 12568
+64     class inst  has a __dict__ attr, same scaling as dict above
+16     __slots__   class with slots has no dict, seems to store in 
+                   mutable tuple-like structure.
+120    func def    doesn't include default args and other attrs
+904    class def   has a proxy __dict__ structure for class attrs
+104    old class   makes sense, less stuff, has real dict though.
+```
+[Source](http://stackoverflow.com/a/30316760/1808021)
+
+---
+
+#Estimating space complexity
+--
+
++ In general, reducing the space complexity of an algorithm will decrease run time
+--
+
++ In most cases, this isn't important given the state of technology
+--
+
++ Becomes clear when you get to larger scales
+
+---
+
+#Estimating time complexity
++ What is the time complexity of this?
+
+```python
+#takes in a list of numbers (a) and sums them together
+def sum(a):
+    sum = 0
+    for n in a:
+        sum += n
+    return sum
+```
+
+---
+
+#Estimating time complexity
++ What about the time complexity of this?
+```python
+#takes in a list of numbers (a) and multiplies each
+# element by the other elements in the list
+#assigns that value to the original position in the list
+def multiply_list_element(a):
+        for i in range(a):
+            sum = 0
+            for j in range(a):
+                if i != j:
+                    sum += a[i] * a[j]
+            a[i] = sum
+```
+
+---
+
+#Estimating time complexity
++ We can estimate the worst-case, best-case, or average-case
+--
+
++ We generally use the average-case (called Big-O)
+--
+
++ We can then compare based on the average case for a given input size
+
+---
+
+#Estimating time complexity
+![img-center-100](http://i.stack.imgur.com/WcBRI.png)
+
+---
+
+#Wish we were doing these calculations?
+![img-center-80](../images/algo_calc.jpg)
+
+---
+
+#Analysis of Algorithms
+
+>###People who analyze algorithms have double happiness. First of all they experience the sheer beauty of elegant mathematical patterns that surround elegant computational procedures. Then they receive a practical payoff when their theories make it possible to get other jobs done more quickly and more economically.
+
+###-[Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/aa.html)
+
+---
+class:middle
+![img-center-55](../images/impressed.jpg)
+
+---
+
+#Test of an algorithm
+--
+
++ Debugging to make sure it works properly
+--
+
+> ##Debugging can only point to the presence of errors, but not to their absence
+> ###-E. Dijkstra
+
+---
+
+#Key Takeaways
+--
+
++ There will come a point when you need to be more thoughtful in your code
+--
+
++ Use pseudocode or other means to think through the operation you want to accomplish
+--
+
++ Try to minimize the number of variables and operations you're conducting to reduce complexity
+--
+
++ Just because it runs, it doesn't mean it's correct
+--
+
++ Test and verify before going into production (whatever that means for you)
+
+---
+
+#Want to know more?
++ Knuth, Donald E. <i>The Art of Computer Programming</i>. Addison-Wesley Professional, 2011.
++ Sedgewick, Robert and Kevin Wayne. <i>Algorithms</i>. Addison-Wesley Professional, 2011. 
++ They also have a [Coursera course](https://www.coursera.org/learn/introduction-to-algorithms). [This Coursera course](https://www.coursera.org/learn/algorithm-design-analysis) is more theoretical
+
+
+---
+
+class:center,middle
+#Questions?
+
+---
+
+#Readings
++ Hon, Keone. “[An Introduction to Statistics.](../class3/reading/statistics_firstfive.pdf)” Ch. 1 and 2.
++ Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
++ ["Netflix knows exactly how long you’ll look for something to watch before giving up" Quartz](http://qz.com/622316/netflix-knows-exactly-how-long-youll-look-for-something-to-watch-before-giving-up/)
+
+
+---
+
+#Assignment 1
++ Implement the sorting algorithm you came up with in pseudocode with Python
++ Test the sorting algorithm with a list of 10, 100, 1000 random numbers and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Assignment 2
++ Implement the search algorithm you came up with in pseudocode with Python
++ Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#One last thing...
+--
+
+##Please don't call me "professor"
+![img-center-70](http://img.memefact.com/images/global3.memecdn.com/professor-cat_o_217872.jpg)
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
