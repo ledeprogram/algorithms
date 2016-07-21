@@ -26,10 +26,50 @@ class: center,middle
 ---
 
 #Do Now
++ Fill out [this sheet](http://bit.ly/algo2016-data)
 
 ---
 
+class:center,middle
 #Assignment Review
+
+---
+
+#First of all
+![img-center-50](http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-follow-instructions-12.png)
+
+---
+
+#Assignments
++ Some are still committing other files<br>
+--
+
+...Don't do that
+--
+
++ Add feedback to your PRs
+--
+
++ .red[Don't commit changes to other student's files]
+
+---
+
+#Assignment 1
++ Implement the sorting algorithm you came up with in pseudocode with Python
++ Test the sorting algorithm with a list of 10, 100, 1000 random numbers and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Assignment 2
++ Implement the search algorithm you came up with in pseudocode with Python
++ Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Readings
++ Hon, Keone. “[An Introduction to Statistics.](../class3/reading/statistics_firstfive.pdf)” Ch. 1 and 2.
++ Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
++ ["Netflix knows exactly how long you’ll look for something to watch before giving up" Quartz](http://qz.com/622316/netflix-knows-exactly-how-long-youll-look-for-something-to-watch-before-giving-up/)
 
 ---
 
@@ -96,6 +136,38 @@ class:center,middle
 
 ---
 
+#Read in the data from the class
+```pandas
+import pandas as pd
+%matplotlib inline
+
+df = pd.read_csv("Data_Collection_Sheet.csv")
+```
+---
+
+#Generate a histogram in Python
+
+```pandas
+df.hist()
+```
+![img-center-55](../images/collection_hist.png)
+--
+
+##Check out the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html)
+
+---
+
+#Generate a histogram in Python
+
+```python
+df["height (inches)"].hist(bins=20)
+```
+--
+
+![img-center-70](../images/height_hist.png)
+
+---
+
 class:center,middle
 #Distributions of Data
 
@@ -129,7 +201,20 @@ class:center,middle
 --
 
 + Sensitive to extremes
+--
 
+
+```python
+df.mean()
+```
+--
+
+```
+height (inches)                 66.623477
+age (years)                     29.500000
+siblings (not including you)     1.500000
+dtype: float64
+```
 ---
 
 #Median
@@ -149,11 +234,28 @@ class:center,middle
 
 ![img-center-100](../images/median_balance.png)
 
+--
+
+```python
+df.median()
+```
 ---
 
 #Median vs Mean
 ![img-center-100](../images/mean_vs_median.png)
 
+####Mean
+```
+height (inches)                 66.623477
+age (years)                     29.500000
+siblings (not including you)     1.500000
+```
+####Median
+```
+height (inches)                 66.5
+age (years)                     27.0
+siblings (not including you)     1.0
+```
 ---
 
 #Mode
@@ -163,9 +265,13 @@ class:center,middle
 --
 
 + Often used for categorical data
+![img-right-50](../images/mode.png)
+
 --
 
-![img-center-50](../images/mode.png)
+```python
+df.mode()
+```
 
 ---
 
@@ -200,6 +306,11 @@ class:center,middle
 --
 
 + Calculated by subtracting the minimum from the maximum
+--
+
+```python
+df["height (inches)"].max() - df["height (inches)"].min()
+```
 
 ---
 
@@ -222,7 +333,13 @@ class:center,middle
 --
 
 + Fourth quartile is 75-100% of the data
+--
 
+```python
+df.quantile(q=0.25) #1st Quartile
+df.quantile(q=0.5) #2nd Quartile (Median)
+df.quantile(q=0.75) #3rd Quartile
+```
 ---
 
 #Interquartile Range
@@ -231,7 +348,11 @@ class:center,middle
 + “Middle” 50% of data (between 1st Quartile and 3rd Quartile)
 --
 
-![img-center-80](../images/iqr.png)
+![img-center-65](../images/iqr.png)
+
+```python
+df['height (inches)'].quantile(q=0.75) - df['height (inches)'].quantile(q=0.25)
+```
 
 ---
 
@@ -264,6 +385,48 @@ http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/
 --
 
 ![img-center-100](../images/std1.png)
+
+---
+
+#Standard Deviation
+![img-center-100](../images/std_breakdown.png)
+
+---
+
+#Calculating Standard Deviation
+--
+
++ Subtract the mean from each data point
+--
+
++ Square the result
+--
+
++ Sum them together
+--
+
++ Divide by the number of instances (minus 1)
+--
+
++ Take the square root
+
+---
+
+#Calculating Standard Deviation
+[![img-center-45](https://thekubicle.com/assets/lesson_images/stdev.gif)](https://thekubicle.com/lessons/variance-and-standard-deviation)
+--
+
+###or
+--
+
+```python
+df.std()
+```
+```
+height (inches)                 3.239595
+age (years)                     7.676495
+siblings (not including you)    1.057850
+```
 
 ---
 
@@ -319,6 +482,13 @@ http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/
 
 ---
 
+class:center,middle
+#10 Min Break
+![img-center-90](http://imgs.xkcd.com/comics/boyfriend.png)
+Source: https://xkcd.com/539/
+
+---
+
 #Correlations
 ![img-center-100](../images/corr1.png)
 ###How do we measure this relationship?
@@ -326,40 +496,20 @@ http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/
 ---
 
 #Coefficient of Correlation
+--
 
----
-
-#Coefficient of Correlation
 + Quantifies the amount of shared variability between variables
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
 + Ranges between -1 and +1 
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
 + Negative numbers are inversely proportional
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
-+ Negative numbers are inversely proportional
 + Positive numbers are directly proportional
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
-+ Negative numbers are inversely proportional
-+ Positive numbers are directly proportional
 + The closer to either -1 or +1, the greater the correlation
 
 ---
@@ -375,6 +525,13 @@ http://www.statisticshowto.com/what-is-the-correlation-coefficient-formula/
 ![img-center-100](../images/corr2.png)
 
 http://pixshark.com/correlation-examples.htm 
+
+---
+
+#Let's calculate the heigh ~ weight correlation
++ Read in the `height_weight.xlsx` file from the `class4/data` folder
++ Run the `corr()` function
++ Interpret the result
 
 ---
 
@@ -410,6 +567,34 @@ http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-
 
 class:center,middle
 #Why am I doing this with you?
+
+---
+
+#Readings
++ "Brexiting Yourself In The Foot: Why Britain's Eurosceptic Regions Have Most To Lose From Eu Withdrawal" http://www.cer.org.uk/insights/brexiting-yourself-foot-why-britains-eurosceptic-regions-have-most-lose-eu-withdrawal (Extra credit if you can recreate their analysis)
+
+---
+
+#Assignment 1
++ Perform a basic statistical analysis of the time DOT 311 (table is called `dot_311`) complaints are open (subtract closed date from created date)
++ Connect to the database to get the data and do the analysis. Submit the code through Github and type up your results in your PR
+
+```
+Host: training.c1erymiua9dx.us-east-1.rds.amazonaws.com
+Port: 5432
+Database: training
+Username: dot_student
+Password: qgis
+```
+---
+
+#Assignment 2
++ Using the `2013_NYC_CD_MedianIncome_Recycle.xlsx` file, calculate the correlation between the recycling rate and the median income. Discuss your findings in your PR.
+
+---
+
+#Assignment 3
++ Using the `heights_weights_genders.csv`, analyze the difference between the height weight correlation in women and men.
 
 ---
 class:center,middle
