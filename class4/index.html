@@ -183,7 +183,20 @@ class:center,middle
 --
 
 + Sensitive to extremes
+--
 
+
+```python
+df.mean()
+```
+--
+
+```
+height (inches)                 66.623477
+age (years)                     29.500000
+siblings (not including you)     1.500000
+dtype: float64
+```
 ---
 
 #Median
@@ -203,11 +216,28 @@ class:center,middle
 
 ![img-center-100](../images/median_balance.png)
 
+--
+
+```python
+df.median()
+```
 ---
 
 #Median vs Mean
 ![img-center-100](../images/mean_vs_median.png)
 
+####Mean
+```
+height (inches)                 66.623477
+age (years)                     29.500000
+siblings (not including you)     1.500000
+```
+####Median
+```
+height (inches)                 66.5
+age (years)                     27.0
+siblings (not including you)     1.0
+```
 ---
 
 #Mode
@@ -217,9 +247,13 @@ class:center,middle
 --
 
 + Often used for categorical data
+![img-right-50](../images/mode.png)
+
 --
 
-![img-center-50](../images/mode.png)
+```python
+df.mode()
+```
 
 ---
 
@@ -254,6 +288,11 @@ class:center,middle
 --
 
 + Calculated by subtracting the minimum from the maximum
+--
+
+```python
+df["height (inches)"].max() - df["height (inches)"].min()
+```
 
 ---
 
@@ -276,7 +315,13 @@ class:center,middle
 --
 
 + Fourth quartile is 75-100% of the data
+--
 
+```python
+df.quantile(q=0.25) #1st Quartile
+df.quantile(q=0.5) #2nd Quartile (Median)
+df.quantile(q=0.75) #3rd Quartile
+```
 ---
 
 #Interquartile Range
@@ -318,6 +363,16 @@ http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/
 --
 
 ![img-center-100](../images/std1.png)
+--
+
+```python
+df.std()
+```
+```
+height (inches)                 3.239595
+age (years)                     7.676495
+siblings (not including you)    1.057850
+```
 
 ---
 
