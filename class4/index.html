@@ -27,12 +27,30 @@ class: center,middle
 
 #Do Now
 + Fill out [this sheet](http://bit.ly/algo2016-data)
-+ 
 
 ---
 
 class:center,middle
 #Assignment Review
+
+---
+
+#First of all
+![img-center-50](http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-follow-instructions-12.png)
+
+---
+
+#Assignments
++ Some are still committing other files<br>
+--
+
+...Don't do that
+--
+
++ Add feedback to your PRs
+--
+
++ .red[Don't commit changes to other student's files]
 
 ---
 
@@ -367,6 +385,38 @@ http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/
 --
 
 ![img-center-100](../images/std1.png)
+
+---
+
+#Standard Deviation
+![img-center-100](../images/std_breakdown.png)
+
+---
+
+#Calculating Standard Deviation
+--
+
++ Subtract the mean from each data point
+--
+
++ Square the result
+--
+
++ Sum them together
+--
+
++ Divide by the number of instances (minus 1)
+--
+
++ Take the square root
+
+---
+
+#Calculating Standard Deviation
+[![img-center-45](https://thekubicle.com/assets/lesson_images/stdev.gif)](https://thekubicle.com/lessons/variance-and-standard-deviation)
+--
+
+###or
 --
 
 ```python
@@ -432,6 +482,13 @@ siblings (not including you)    1.057850
 
 ---
 
+class:center,middle
+#10 Min Break
+![img-center-90](http://imgs.xkcd.com/comics/boyfriend.png)
+Source: https://xkcd.com/539/
+
+---
+
 #Correlations
 ![img-center-100](../images/corr1.png)
 ###How do we measure this relationship?
@@ -439,40 +496,20 @@ siblings (not including you)    1.057850
 ---
 
 #Coefficient of Correlation
+--
 
----
-
-#Coefficient of Correlation
 + Quantifies the amount of shared variability between variables
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
 + Ranges between -1 and +1 
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
 + Negative numbers are inversely proportional
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
-+ Negative numbers are inversely proportional
 + Positive numbers are directly proportional
+--
 
----
-
-#Coefficient of Correlation
-+ Quantifies the amount of shared variability between variables
-+ Ranges between -1 and +1 
-+ Negative numbers are inversely proportional
-+ Positive numbers are directly proportional
 + The closer to either -1 or +1, the greater the correlation
 
 ---
@@ -488,6 +525,13 @@ http://www.statisticshowto.com/what-is-the-correlation-coefficient-formula/
 ![img-center-100](../images/corr2.png)
 
 http://pixshark.com/correlation-examples.htm 
+
+---
+
+#Let's calculate the heigh ~ weight correlation
++ Read in the `height_weight.xlsx` file from the `class4/data` folder
++ Run the `corr()` function
++ Interpret the result
 
 ---
 
@@ -527,12 +571,30 @@ class:center,middle
 ---
 
 #Readings
++ "Brexiting Yourself In The Foot: Why Britain's Eurosceptic Regions Have Most To Lose From Eu Withdrawal" http://www.cer.org.uk/insights/brexiting-yourself-foot-why-britains-eurosceptic-regions-have-most-lose-eu-withdrawal (Extra credit if you can recreate their analysis)
 
 ---
 
 #Assignment 1
++ Perform a basic statistical analysis of the time DOT 311 (table is called `dot_311`) complaints are open (subtract closed date from created date)
++ Connect to the database to get the data and do the analysis. Submit the code through Github and type up your results in your PR
+
+```
+Host: training.c1erymiua9dx.us-east-1.rds.amazonaws.com
+Port: 5432
+Database: training
+Username: dot_student
+Password: qgis
+```
+---
+
+#Assignment 2
++ Using the `2013_NYC_CD_MedianIncome_Recycle.xlsx` file, calculate the correlation between the recycling rate and the median income. Discuss your findings in your PR.
 
 ---
+
+#Assignment 3
++ Using the `heights_weights_genders.csv`, analyze the difference between the height weight correlation in women and men.
 
 ---
 class:center,middle
