@@ -41,13 +41,11 @@ git remote -v #checks for the remotes
 
 ---
 
-
-
 #When you start an assignment or want to refresh the code
 
 ```bash
-git fetch upstream #fetches changes to the upstream repository
 git checkout gh-pages #checkout your local gh-pages branch
+git fetch upstream #fetches changes to the upstream repository into your local gh-pages
 git merge upstream/gh-pages #merges the changes with the upstream gh-pages
 git push origin gh-pages #pushes the merged version to the remote (origin) repository
 ```
