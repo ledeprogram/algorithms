@@ -330,7 +330,11 @@ df.quantile(q=0.75) #3rd Quartile
 + “Middle” 50% of data (between 1st Quartile and 3rd Quartile)
 --
 
-![img-center-80](../images/iqr.png)
+![img-center-65](../images/iqr.png)
+
+```python
+df['height (inches)'].quantile(q=0.75) - df['height (inches)'].quantile(q=0.25)
+```
 
 ---
 
