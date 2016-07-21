@@ -26,10 +26,32 @@ class: center,middle
 ---
 
 #Do Now
++ Fill out [this sheet](http://bit.ly/algo2016-data)
++ 
 
 ---
 
+class:center,middle
 #Assignment Review
+
+---
+
+#Assignment 1
++ Implement the sorting algorithm you came up with in pseudocode with Python
++ Test the sorting algorithm with a list of 10, 100, 1000 random numbers and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Assignment 2
++ Implement the search algorithm you came up with in pseudocode with Python
++ Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Readings
++ Hon, Keone. “[An Introduction to Statistics.](../class3/reading/statistics_firstfive.pdf)” Ch. 1 and 2.
++ Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
++ ["Netflix knows exactly how long you’ll look for something to watch before giving up" Quartz](http://qz.com/622316/netflix-knows-exactly-how-long-youll-look-for-something-to-watch-before-giving-up/)
 
 ---
 
@@ -93,6 +115,38 @@ class:center,middle
 ![img-right-45](../images/hist2.png)
 
 ####http://mathematica.stackexchange.com/questions/59520/histogram-with-variable-bin-size
+
+---
+
+#Read in the data from the class
+```pandas
+import pandas as pd
+%matplotlib inline
+
+df = pd.read_csv("Data_Collection_Sheet.csv")
+```
+---
+
+#Generate a histogram in Python
+
+```pandas
+df.hist()
+```
+![img-center-55](../images/collection_hist.png)
+--
+
+##Check out the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html)
+
+---
+
+#Generate a histogram in Python
+
+```python
+df["height (inches)"].hist(bins=20)
+```
+--
+
+![img-center-70](../images/height_hist.png)
 
 ---
 
@@ -410,6 +464,16 @@ http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-
 
 class:center,middle
 #Why am I doing this with you?
+
+---
+
+#Readings
+
+---
+
+#Assignment 1
+
+---
 
 ---
 class:center,middle
