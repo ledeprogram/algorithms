@@ -22,6 +22,20 @@ Richard Dunks: rad2184 [at] columbia [dot] edu
 + [Course Policies](#course-policies)
 + [Resources](#resources)
 + [Course Outline](#course-outline)
+    + [Class 1](#class1) July 12, 2016
+    + [Class 2](#class2) July 14, 2016
+    + [Class 3](#class3) July 19, 2016
+    + [Class 4](#class4) July 21, 2016
+    + [Class 5](#class5) July 26, 2016
+    + [Class 6](#class6) July 28, 2016
+    + [Class 7](#class7) August 2, 2016
+    + [Class 8](#class8) August 4, 2016
+    + [Class 9](#class9) August 9, 2016
+    + [Class 10](#class10) August 11, 2016
+    + [Class 11](#class11) August 16, 2016
+    + [Class 12](#class12) August 18, 2016
+    + [Class 13](#class13) August 23, 2016
+    + [Class 14](#class14) August 25, 2016
 
 
 - - -
@@ -139,16 +153,165 @@ Steiner, Christopher. <i>Automate This: How Algorithms Came to Rule Our World</i
 
 ####Week 1: Introduction to Algorithms
 
+<a id="class1"></a>
+#####Class 1: Overview of algorithms
+
+######Topics
++ What is an algorithm?
++ Review data structures in Python
++ Overview of [Github in class](tutorials/github_submit.html)
+
+######Readings
++ Darren Rovell "[All Journalists Need to Be Data Driven](https://medium.com/@darrenrovell/all-journalists-need-to-be-data-driven-6dfc73e420d5#.v4dp0faeu)"
+
+######[Homework](http://ledeprogram.github.io/algorithms/class1/#159)
+0. Fork the [repository](https://github.com/ledeprogram/algorithms). Clone the repository onto your local machine (`git clone`). Commit a brief biography of yourself as assignment 0 (text file). Do a pull request to submit.
+1. Write a function that takes in a list of numbers and outputs the mean of the numbers using the formula for mean. Do this without any built-in functions like `sum()`, `len()`, and, of course, `mean()`
+2. Create your own version of the [Mayoral Excuse Machine](http://dnain.fo/1CCHKmI) in Python that takes in a name and location, selects an excuse at random and prints an excuse (“Sorry, Richard, I was late to City Hall to meet you, I had a very rough night and woke up sluggish”). Use the “[excuses.csv](class2/homework/data/excuse.csv)” in the Github repository. Extra credit if you print the link to the story as well.
+3. Modify the code ([in the repository](homework/Exercise3.ipynb)) that prints every prime number between 1 and 100 to only print every other prime number. Extra credit if you can modify the code to speed it up.
+4. The code in [Exercise4.ipynb](homework/Exercise4.ipynb) is meant to search for New York Times articles on gay marriage and look at the mean and median word count, but the code has some problems. Follow the instructions in the notebook to fix the code and submit your fixed code.
+5. React to today's class in a short paragraph and email it to [me](mailto:rad2184[at]columbia[dot]edu?subject=Assignment5). Include what you learned today and what topics you look forward to in the class. Include any additional information you feel I should know about yourself and your experience in this program so far
+
+
+<a id="class2"></a>
+#####Class 2: 
+
+######Topics
+
+######Homework
+
+######Readings
+
 ####Week 2: Statistics/Introduction to Machine Learning
+
+<a id="class3"></a>
+#####Class 3:
+
+######Topics
+
+######Homework
+
+######Readings
+
+<a id="class4"></a>
+#####Class 4:
+
+######Topics
+
+######Homework
+
+######Readings
 
 ####Week 3: Supervised Learning - Feature Engineering and Decision Trees
 
+
+<a id="class5"></a>
+#####Class 5:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
+<a id="class6"></a>
+#####Class 6:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
 ####Week 4: Supervised Learning - Random Forest and Naive Bayes
+
+<a id="class7"></a>
+#####Class 7:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
+<a id="class8"></a>
+#####Class 8:
+
+######Topics
+
+######Homework
+
+######Readings
+
 
 ####Week 5: Unsupervised Learning - Clustering and k-NN
 
+<a id="class9"></a>
+#####Class 9:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
+<a id="class10"></a>
+#####Class 10:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
+
 ####Week 6: Unsupervised Learning - Neural Networks, Natural Language Processing and Algorithms in Everyday Life
 
+<a id="class11"></a>
+#####Class 11:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
+<a id="class12"></a>
+#####Class 12:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
 ####Week 7: Open Lab/Final Projects
+
+<a id="class13"></a>
+#####Class 13:
+
+######Topics
+
+######Homework
+
+######Readings
+
+
+<a id="class14"></a>
+#####Class 14:
+
+######Topics
+
+######Homework
+
+######Readings
+
 
 ######[back to top](#top)
