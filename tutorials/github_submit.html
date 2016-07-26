@@ -49,6 +49,14 @@ git fetch upstream #fetches changes to the upstream repository into your local g
 git merge upstream/gh-pages #merges the changes with the upstream gh-pages
 git push origin gh-pages #pushes the merged version to the remote (origin) repository
 ```
+--
+#Create a branch, commit your changes, and push the branch to your repository
+```bash
+git checkout -b <branch_name>
+git add <file_names> #not git add .
+git commit -m 'commit message'
+git push --set-upstream origin <branch_name>
+```
 ---
 
 #Create a branch to work in
