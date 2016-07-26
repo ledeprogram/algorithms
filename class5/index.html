@@ -202,27 +202,6 @@ class:center,middle
 
 ---
 
-class:center,middle
-#And how does it do the fit?
-
----
-
-![img-center-90](../images/show_math.png)
-
-Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.pdf
-
----
-
-#For the rest of us
---
-
-+ The fit function calculates the coefficients through a relatively simple calculation that approximates the values very closely
---
-
-+ This makes the calculation relatively quick, even for larger datasets
-
----
-
 #Linear Regression
 --
 
@@ -252,6 +231,35 @@ Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.p
 
 ---
 
+#Linear Regression
++ The sum of squared residuals (or sum of squared errors) is the best measure of how good a regression line is
+--
+
++ Ideally, we want the smallest SSR possible
+
+---
+
+class:center,middle
+#And how does it do the fit?
+
+---
+
+![img-center-90](../images/show_math.png)
+
+Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.pdf
+
+---
+
+#For the rest of us
+--
+
++ The fit function calculates the coefficients through a relatively simple calculation that approximates the values very closely
+--
+
++ This makes the calculation relatively quick, even for larger datasets
+
+---
+
 #Prediction
 --
 
@@ -267,6 +275,11 @@ Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.p
 <br>
 <br>
 ![img-center-70](../images/Regression_bad_and_good.png)
+
+---
+
+#Prediction
+[![img-center-80](http://ci.columbia.edu/ci/premba_test/c0331/images/s7/7176267017.gif)](http://ci.columbia.edu/ci/premba_test/c0331/s7/s7_6.html)
 
 ---
 
@@ -314,6 +327,12 @@ Source: http://xkcd.com/552/
 #Multiple Regression
 [![img-center-80](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/MultipleLinearRegression-Plane.png)](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression4.html)
 Licensed under [Creative Commons Attribution-NonCommercial 3.0 Unported](http://creativecommons.org/licenses/by-nc/3.0)
+
+---
+
+class:center,middle
+#Multiple Regression Example
+##Open `Multiple_Linear_Regression.ipynb`
 
 ---
 
@@ -367,6 +386,14 @@ class:center,middle
 
 ![img-center-80](http://www.mumsnet.com/system/1/assets/files/000/023/376/23376/e0103ca34/original/ExcellentQ.gif?1439482500)
 
+
+---
+
+#Resources
++ [Statistical Sampling and Regression: Simple Linear Regression](http://ci.columbia.edu/ci/premba_test/c0331/s7/s7_6.html)
++ [Introduction to Linear Regression](http://nbviewer.jupyter.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb)
++ [An Introduction to Statistical Learning with R](http://www-bcf.usc.edu/~gareth/ISL/)
+
 ---
 
 #Reading/Watching
@@ -390,6 +417,12 @@ class:center,middle
 
 #Assignment 3
 + Using the data from the `2013_NYC_CD_MedianIncome_Recycle.xlsx` file, create a predictor using the weights from the model. This time, use the built in attributes in your model rather than hard-coding them into your algorithm
+
+---
+
+#Assignment 4
++ Using data from [this FiveThirtyEight post](http://53eig.ht/1e2aV6U), write code to calculate the correlation of the responses from the poll.
++ Respond to the story in your PR. Is this a good example of data journalism? Why or why not?
 
 ---
 class:center,middle
