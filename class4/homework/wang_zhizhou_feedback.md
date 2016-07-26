@@ -1,0 +1,2 @@
+* The first homework was complicated. While we need to deal with some unfamiliar dataset from remote database, it would be important to have some kind of documentation to read, otherwise it would be really hard to explore the format, the content and other things of the table.
+* Different date frame needs to be cleaned up before we want to do any kind of analysis, sometimes there are bad data as well.. which could really be a probelm.. just like in the first homework :(
