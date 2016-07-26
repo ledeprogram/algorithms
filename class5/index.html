@@ -25,8 +25,11 @@ class: center,middle
 
 ---
 
-#Do Now
-+
+#Do Now 5
++ Query the training database you used in homework 4-1 and query the `noise_311` table
++ Perform a basic statistical analysis of the time a complaint is left open
++ Compare the results to what you found for DOT complaints
++ Submit this as Do Now 5
 
 ---
 
@@ -48,6 +51,266 @@ class: center,middle
 
 #Assignment 3
 + Using the `heights_weights_genders.csv`, analyze the difference between the height weight correlation in women and men.
+
+---
+
+#Goals for today
++ Introduce simple and multiple linear regression
++ Discuss the application of regression to problems
++ Practice finding the regression weights in Python
+
+---
+
+class:center, middle
+#First a quick review
+
+---
+
+#Measures of Central Tendency
+--
+
++ Quantitative data tends to cluster around some central value
+--
+
++ Contrasts with the spread of data around that center (i.e. the variability in the data)
+--
+
++ Mean is a more precise measure and more often used
+--
+
++ Median is better when there are extreme outliers
+--
+
++ Mode is used when the data is categorical (as opposed to numeric)
+
+---
+
+#Measures of Variability
+--
+
++ Describe the distribution of our data
+--
+
++ Range (Maximum – Minimum)
+--
+
++ Inter-quartile Range
+--
+
++ Standard Deviation
+--
+
++ Identification of outliers (1.5 x IQR)
+
+---
+
+#Descriptive Statistics
+--
+
++ Quantitatively describe the main features of a dataset
+--
+
++ Help distinguish distributions and make them comparable
+
+---
+
+#Exploratory Data Analysis
+--
+
++ Goal -> Discover patterns in the data
+--
+
++ Understand the context
+--
+
++ Summarize fields
+--
+
++ Use graphical representations of the data
+--
+
++ Explore outliers
+
+---
+
+#Coefficient of Correlation
+--
+
++ Quantifies the amount of shared variability between variables
+--
+
++ Ranges between -1 and +1 
+--
+
++ Negative numbers are inversely proportional
+--
+
++ Positive numbers are directly proportional
+--
+
++ The closer to either -1 or +1, the greater the correlation
+
+---
+
+#Coefficient of Correlation
+![img-center-100](../images/corr2.png)
+
+http://pixshark.com/correlation-examples.htm 
+
+---
+
+class:center,middle
+#What we didn't talk about...
+
+---
+
+#Cofficient of Determination
+--
+
++ The percentage of variance in one variable shared with the other
+--
+
++ More shared variability implies a stronger relationship
+--
+
++ Calculate by squaring the correlation coefficient
+--
+
++ Ex. the correlation of determination for our height and weight dataset is 0.77
+
+---
+
+#Linear Regression
+--
+
++ Using the known relationship between continuous variables, we can predict unseen values
+--
+
++ Assumes relationship is linear (but doesn’t need to be)
+
+---
+
+#Linear Regression
+--
+
++ Draw a line that minimizes the distance between each point
+--
+
++ “Line of best fit” -> minimizes the sum of squared residuals
+
+[![img-center-80](http://nbviewer.jupyter.org/github/justmarkham/DAT4/blob/master/notebooks/08_estimating_coefficients.png)](http://nbviewer.jupyter.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb)
+
+---
+
+#Linear Regression
+--
+
++ Characteristics of the line defines the relationship
+--
+
++ Slope -> relationship between independent and dependent variable (how Y increases per unit of X)
+--
+
++ Intercept -> expected mean value of Y at X=0
+--
+
++ Values along the line are the predicted values for any given value X
+
+---
+
+#Linear Regression
+![img-center-60](http://3.bp.blogspot.com/-P0KfIeYn8FI/UJRlKPqegTI/AAAAAAAADGs/MmZWNvK1GD0/s1600/ex03-0501d.PNG)
+
+[Source](http://lms.caribbeanoer.org/courses/23/modules/items/722) Open Algebra Study Guide by [John Redden](http://www.openalgebra.com/) is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US).
+
+---
+
+#Linear Regression
+![img-left-40](../images/lr_formula.png)
+![img-right-60](http://nbviewer.jupyter.org/github/justmarkham/DAT4/blob/master/notebooks/08_slope_intercept.png)
+
+---
+
+#Linear Regression in Python
+
+---
+
+![img-center-90](../images/show_math.png)
+
+Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.pdf
+
+---
+
+#For the rest of us
+--
+
++ The fit function calculates the coefficients through a relatively simple calculation that approximates the values very closely
+--
+
++ This makes the calculation relatively quick, even for larger datasets
+
+---
+
+#Prediction
+--
+
++ Using the relationship between variables, we can predict values based on the relationship
+--
+
++ Can estimate the magnitude as well as the general trend
+--
+
++ More data points, the better the prediction
+
+---
+
+class:center,middle
+#10 Min Break
+![img-center-70](http://imgs.xkcd.com/comics/correlation.png)
+Source: http://xkcd.com/552/
+
+---
+
+#So this works great with two variables
+--
+
+#Could we have more variables?
+
+---
+
+#Linear Regression
++ What we've done so far has been called simple linear regression
++ It involved one explanatory variable and one 
+
+---
+
+#Multiple Regression
+[![img-center-80](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/MultipleLinearRegression-Plane.png)](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression4.html)
+Licensed under [Creative Commons Attribution-NonCommercial 3.0 Unported](http://creativecommons.org/licenses/by-nc/3.0)
+
+---
+
+#Reading/Watching
++ "[Not Even Scientists Can Easily Explain P-values](http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/)"
++ "[Last Week Tonight with John Oliver: Scientific Studies](https://youtu.be/0Rnq1NpHdmw)"
+
+---
+
+#Assignment 1
++ Use the data from `heights_weights_genders.csv` to create a simple predictor that takes in a person's height and guesses their weight based on a model using all the data, regardless of gender
++ Find the weights and use those in your function (i.e. don't generate a model each time)
+
+---
+
+#Assignment 2
++ Create two models for the relationship between height and weight based on gender 
++ Modify the code in Assignment 1 to ask for a person's gender as well as their height to produce an estimate of a person's weight using the models you created
++ Find the weights and use those in your function (i.e. don't generate a model each time)
+
+---
+
+#Assignment 3
++ Using the data from the `2013_NYC_CD_MedianIncome_Recycle.xlsx` file, create a predictor using the weights from the model. This time, use the built in attributes in your model rather than hard-coding them into your algorithm
 
 ---
 class:center,middle
