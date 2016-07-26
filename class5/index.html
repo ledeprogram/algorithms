@@ -202,6 +202,27 @@ class:center,middle
 
 ---
 
+class:center,middle
+#And how does it do the fit?
+
+---
+
+![img-center-90](../images/show_math.png)
+
+Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.pdf
+
+---
+
+#For the rest of us
+--
+
++ The fit function calculates the coefficients through a relatively simple calculation that approximates the values very closely
+--
+
++ This makes the calculation relatively quick, even for larger datasets
+
+---
+
 #Linear Regression
 --
 
@@ -231,26 +252,6 @@ class:center,middle
 
 ---
 
-#Linear Regression in Python
-
----
-
-![img-center-90](../images/show_math.png)
-
-Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.pdf
-
----
-
-#For the rest of us
---
-
-+ The fit function calculates the coefficients through a relatively simple calculation that approximates the values very closely
---
-
-+ This makes the calculation relatively quick, even for larger datasets
-
----
-
 #Prediction
 --
 
@@ -261,6 +262,16 @@ Andrew Ng Machine Learning Class: http://cs229.stanford.edu/notes/cs229-notes1.p
 --
 
 + More data points, the better the prediction
+--
+
+<br>
+<br>
+![img-center-70](../images/Regression_bad_and_good.png)
+
+---
+
+class:middle
+![img-center-100](../images/lr_predict.png)
 
 ---
 
@@ -271,22 +282,90 @@ Source: http://xkcd.com/552/
 
 ---
 
-#So this works great with two variables
+#Linear Regression
 --
 
-#Could we have more variables?
++ What we've done so far has been called simple linear regression
+--
+
++ It involved one explanatory variable and one response variable
+--
+
++ It's possible to have multiple explanatory variables
+
+
 
 ---
 
-#Linear Regression
-+ What we've done so far has been called simple linear regression
-+ It involved one explanatory variable and one 
+#Multiple Regression
+--
+
++ Instead of one feature we have several features
+--
+
++ Each feature has their own coefficient
+--
+
+
+![img-center-100](../images/mlr_formula.png)
 
 ---
 
 #Multiple Regression
 [![img-center-80](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/MultipleLinearRegression-Plane.png)](http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/R/R5_Correlation-Regression/R5_Correlation-Regression4.html)
 Licensed under [Creative Commons Attribution-NonCommercial 3.0 Unported](http://creativecommons.org/licenses/by-nc/3.0)
+
+---
+
+#Overfitting/Underfitting
+[![img-center-100](http://scikit-learn.org/stable/_images/plot_underfitting_overfitting_001.png)](http://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html)
+
+[Source](http://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html). © 2010 - 2014, scikit-learn developers ([BSD License](https://opensource.org/licenses/BSD-2-Clause))
+
+---
+
+#Overfitting Example
+![img-center-90](../images/ohm1.png)
+
+---
+
+#Overfitting Example
+![img-center-60](../images/ohm2.png)
+
+---
+
+class:center,middle
+![img-center-100](http://cmbuzz.com/wp-content/uploads/2012/10/big-idea.jpg)
+
+---
+
+#Data Modeling
+--
+
++ We're writing a formula to approximate reality
+--
+
++ The formula can be complex or simple depending on how much error we're willing to tolerate
+--
+
++ Reality is rarely so simple
+--
+
++ But you'd be surprised how far this can get us 
+
+---
+
+![img-center-100](../images/simplify.png)
+--
+
+###Obviously...
+
+---
+
+class:center,middle
+#Any questions?
+
+![img-center-80](http://www.mumsnet.com/system/1/assets/files/000/023/376/23376/e0103ca34/original/ExcellentQ.gif?1439482500)
 
 ---
 
