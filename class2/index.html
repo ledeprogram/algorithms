@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: How I Learned Collaborating In Code Can Be Fun
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class2
+
+---
+
+#Do Now
+![img-right-20](http://www.math.fsu.edu/~wooland/hm2ed/Part3Module9/Sol4/graphics/Sol41.jpeg)
++ [Fetch from the upstream repository](../tutorials/github_submit.html#4)
++ Create a function to calculate the volume of a sphere
++ Ensure you check for r < 0 and handle the case
++ Use `from math import pi`
++ Save this file into the folder `algorithms/class2/donow` with `<lastname>_<firstname>_2_donow.ipynb` 
++ Commit and push to your repo
++ Submit a PR for the Do Now
+
+---
+
+# Goals for Today
+--
+
++ Review the reading assignment
+--
+
++ Review git, Github, and the homework submission process
+--
+
++ Review the exercises
+--
+
++ Review sets and control flow in Python
+--
+
++ Discuss the design process for algorithms using pseudocode
+--
+
++ Introduce sorting algorithms
+--
+
++ Discuss the analysis of algorithms (if time)
+
+---
+
+class:center,middle
+#So what did you think of [the reading](https://medium.com/@darrenrovell/all-journalists-need-to-be-data-driven-6dfc73e420d5#.v4dp0faeu)?
+
+---
+
+class:center,middle
+#Introduction to Git
+
+---
+
+class:center,middle
+#Why Git?
+
+---
+
+class:center,middle
+![img-center-100](../images/git1.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git2.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git3.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git4.png)
+
+---
+
+class:center,middle
+#Collaborating with Git
+
+---
+
+class:center,middle
+![img-center-100](../images/git5.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git6.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git7.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git8.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git9.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git10.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git11.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git12.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/git13.png)
+
+---
+class:center
+#Git Workflow
+![img-center-100](../images/git14.png)
+
+---
+
+#Forking
+[![img-center-55](http://i.stack.imgur.com/yPKXU.png)](http://stackoverflow.com/a/3611349/1808021)
+
+Source: StackOverflow user [vonc](http://stackoverflow.com/users/6309/vonc)
+and licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 
+---
+
+#Branching
+[![img-center-100](https://confluence.atlassian.com/bitbucket/files/304578655/790630019/2/1449003550298/build_status_commits.png)](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html)
+
+[Source](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html), used under [Creative Commons Attribution 2.5 Australia License](https://creativecommons.org/licenses/by/2.5/au/legalcode)
+
+---
+
+class:center,middle
+#Still not clear on branching and forking?
+##[Check out this description](https://confluence.atlassian.com/bitbucket/branch-or-fork-your-repository-221450630.html)
+##[And this Stack Overflow response](http://stackoverflow.com/a/3611349/1808021)
+
+---
+
+class:center,middle
+#Can we start branching in assignments?
+
+---
+
+class:center,middle
+#Let's talk about the assignments
+
+---
+
+#Problems with submitting assignments
+--
+
++ Not following the naming convention (`<last>_<first>_<class>_<assign>.ipynb`)
+--
+
++ Committing files you shouldn't have (only `git add` the files you want updated)
+--
+
++ Overwriting the Exercise files (don't do that)
+--
+
++ Trying to merge with the wrong branch (should be gh-pages)
+
+---
+
+#Changes I made
+--
+
++ Updated the [`.gitignore`](https://github.com/ledeprogram/algorithms/blob/gh-pages/.gitignore)
+--
+
++ Revised the [Github tutorial](../tutorials/github_submit.html)
+--
+
++ Anything else?
+
+---
+
+#Assignment 1
++ Write a function that takes in a list of numbers and outputs the mean of the numbers using the formula for mean. Do this without any built-in functions like `sum()`, `len()`, and, of course, `mean()`
+
+![img-center-90](../images/mean_form.png)
+
+---
+
+#Assignment 2
++ Create your own version of the [Mayoral Excuse Machine](http://dnain.fo/1CCHKmI) in Python that takes in a name and location, selects an excuse at random and prints an excuse (“Sorry, Richard, I was late to City Hall to meet you, I had a very rough night and woke up sluggish”)
++ Use the “[excuses.csv](homework/data/excuse.csv)” in the Github repository
++ Extra credit if you print the link to the story as well
+
+---
+
+#Assignment 3
++ Modify the code below ([in the repository](homework/Exercise3.ipynb)) that prints every prime number between 1 and 100 to only print every other prime number
++ Extra credit if you can modify the code to speed it up
+
+```python
+for num in range(1,101):
+    prime = True
+    for i in range(2,num):
+        if (num%i==0):
+            prime = False
+    if prime:
+        print(num)
+```
+
+---
+
+#Assignment 4
++ The code in [Exercise4.ipynb](homework/Exercise4.ipynb) is meant to search for New York Times articles on gay marriage and look at the mean and median word count, but the code has some problems
++ Follow the instructions in the notebook to fix the code and submit your fixed code
+
+---
+
+class:center,middle
+#Data Structures Redux
+
+---
+
+#Sets
+--
+
++ An unordered collection with no duplicate values
+--
+
++ Created using the keyword “set”
+--
+
++ More limited in the types of objects that can be included (stick with basic types)
+--
+
++ Think of it like a bag of things you toss values into without needing to get them out in any order
+
+--
+
+```python
+s = set("lede algorithms")
+print(s)
+{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
+```
+
+---
+
+#When to use sets
+--
+
++ When you only need unique values
+--
+
++ When the data types you’re working with are relatively basic (hashable)
+--
+
++ When your data changes
+--
+
++ When you need to manipulate your sets mathematically (set supports operations like union, intersection, difference, etc)
+
+---
+
+#Set example
+```python
+s = set("lede algorithms")
+print(s)
+{'m', 'o', 'i', 'd', 'r', 's', 'z', 'a', 'g', 'l', ' ', 'e', 't', 'h'}
+
+c = set("columbia")
+print(c)
+{'a', 'b', 'c', 'i', 'l', 'm', 'o', 'u'}
+
+print(c - s)
+{'c', 'b', 'u'}
+```
+
+---
+
+#Set functions
+--
+
++ `add(value)` - adds value to set
+--
+
++ `remove(value)` - removes the value; if not present raises key error
+--
+
++ `discard(value)` - discards the value if present in the set
+--
+
++ `pop()` - removes an arbitrary set element
+--
+
++ use `for` loop to access all the elements (can't index)
+
+---
+
+#For more information on data structures
++ [Tutsplus Advanced Data Structures](http://code.tutsplus.com/articles/advanced-python-data-structures--net-32748)
++ [Pythoncourse.eu Sets and Frozensets](http://www.python-course.eu/sets_frozensets.php)
+
+---
+
+class:center,middle
+#Control Flow
+
+---
+
+#Control Statements
+--
+
++ Manages order of program operation
+--
+
++ Helps program make a decision based on conditions
+--
+
++ Any computable operation can be replicated with a mix of three control statements (sequence, selection, and iteration)
+
+---
+
+#Sequence
+--
+
++ The order of functions in a program
+--
+
++ Most basic form of control flow
+--
+
++ Basically the thing you've been doing this whole time
+
+---
+
+#Conditional statement (selection)
+--
+
++ Code block only executes if some logical test is met
+--
+
++ Logical test can be as simple or complex as necessary
+--
+
++ Uses [Boolean logic](http://learnpythonthehardway.org/book/ex28.html)
+
+---
+
+#Conditional statement in Python (selection)
+
++ `if <logical test>:` code executes only if the logical test is `True` 
+--
+
++ `elif <logical test>:` tests for an additional condition (can have an unlimited number)
+--
+
++ `else:` optional default if none of the other tests are true
+--
+
+```python
+temp = 70
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+---
+
+#Conditional statement in Python (selection)
++ Notice the execution of the `if`, `elif`, `else` is going to stop once a condition is met and the sequence will continue
+```python
+temp = 70
+if temp < 30:
+        print("It's really cold!")
+elif temp < 65:
+        print("It's cold!")
+elif temp > 100:
+        print("It's really hot")
+elif temp > 85:
+        print("It's hot!")
+else:
+        print("The temperature is fine")
+```
+
+---
+
+#For Loops (iteration)
+--
+
++ Loops through a set sequence of values
+--
+
++ Assign a temporary variable that takes on the element from the sequence
+--
+
++ Temporary variable used within the body of the loop
+--
+
++ Temporary variable is reassigned with next value from sequence
+--
+
+```python
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+        print(w)
+```
+
+---
+
+#While Loops (iteration)
++ Loops until a guard condition is met
+--
+
+```python
+n = 0
+while n < 5:
+        n += 1
+print(n)
+```
+--
+
++ What happens if I forgot the `n += 1`?
+--
+
+![img-center-70](http://i.giphy.com/HPASxeEylfHA4.gif)
+
+---
+
+#While Loops (iteration)
++ Use when the number of iterations is unknown
+--
+
++ Helps ensure a condition or variable state is achieved before moving on with code execution
+
+---
+
+class:center
+#10 Min Break
+![img-center-40](http://imgs.xkcd.com/comics/git.png)
+Source: http://xkcd.com/1597/
+
+---
+
+#Study of Algorithms
+--
+
++ Design of an algorithm
+--
+
++ Validation of an algorithm
+--
+
++ Analysis of an algorithm
+--
+
++ Test of an algorithm
+
+--
+
+##A "real" algorithms class would focus on each of these things intensely
+--
+
+##We won't be doing that
+
+---
+
+class:center,middle
+#Design of an algorithm
+
+---
+
+#Pseudocode
+--
+
++ An informal, high-level description of a process
+--
+
++ Describes the flow of an operation
+--
+
++ Similar to actual code
+--
+
++ Focus is on the execution rather than syntax
+--
+
++ Can create your own pseudocode style
+
+---
+
+#Pseudocode example
+
+```
+function grader
+    If student's grade is greater than or equal to 60
+        print "passed"
+    else
+        print "failed"
+```
+
+--
+
+##Notice this looks a lot like Python
+```python
+def grader(students_grade):
+    if students_grade >= 60:
+        print("passed")
+    else:
+        print("failed")
+```
+
+---
+
+#Another example
+
+<a title="By Walké (Own work) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AAddition.gif"><img width="45" alt="img-center-50" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Addition.gif"/></a>
+
+##How would we describe multi-digit addition in pseudocode?
+
+---
+
+class:center,middle
+#Let's write some more algorithms
+
+---
+
+#Sort
+--
+
++ Input: a list of values
+--
+
++ Operation: sort the list
+--
+
++ Output: a sorted list of values
+
+---
+
+#Search
+--
+
++ Input: a sorted list and a search term
+--
+
++ Operation: find the element in the list
+--
+
++ Output: the location of the item in the list or indicate if it's not there
+
+---
+
+#Validating an algorithm
+--
+
++ Ensure algorithm computes correct answer for all legal inputs
+--
+
++ Usually a mathematical process involving some proof of correctness
+--
+
++ Called "program proving" or "program verification"
+--
+
++ It ensures the logic is correct
+--
+
++ Why is this important?
+
+---
+
+#Analyzing an algorithm
+--
+
++ Determine how much computing space and computing time an algorithm will take for a given number of inputs
+--
+
++ More inputs require more space and time to compute
+--
+
++ The design of the operation will increase the complexity
+--
+
++ We can estimate beforehand or test afterward
+--
+
++ In some cases it's better to estimate than test
+
+---
+
+#Estimating complexity
++ What is the time complexity of this?
+
+```python
+#takes in a list of numbers (a) and sums them together
+def sum(a):
+    sum = 0
+    for n in a:
+        sum += n
+    return sum
+```
+
+---
+
+#Estimating complexity
++ What about the time complexity of this?
+```python
+#takes in a list of numbers (a) and multiplies each element by the other elements in the list
+#assigns that value to the original position in the list
+def multiply_list_element(a):
+        for i in range(a):
+            sum = 0
+            for j in range(a):
+                if i != j:
+                    sum += a[i] * a[j]
+            a[i] = sum
+```
+
+---
+
+#Estimating complexity
++ We can estimate the worst-case, best-case, or average-case
+--
+
++ We generally use the average-case (called Big-O)
+--
+
++ We can then compare based on the average case for a given input size
+
+---
+
+#Estimating complexity
+![img-center-100](http://i.stack.imgur.com/WcBRI.png)
+
+---
+
+#Wish we were doing these calculations?
+![img-center-80](../images/algo_calc.jpg)
+
+---
+
+#Analysis of Algorithms
+
+>###People who analyze algorithms have double happiness. First of all they experience the sheer beauty of elegant mathematical patterns that surround elegant computational procedures. Then they receive a practical payoff when their theories make it possible to get other jobs done more quickly and more economically.
+
+###-[Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/aa.html)
+
+---
+class:middle
+![img-center-55](../images/impressed.jpg)
+
+---
+
+#Test of an algorithm
+--
+
++ Debugging to make sure it works properly
+--
+
+> ##Debugging can only point to the presence of errors, but not to their absence
+> ###-E. Dijkstra
+
+---
+
+class:center,middle
+#Questions?
+
+---
+
+#Readings
++ Hon, Keone. “[An Introduction to Statistics.](../class3/reading/statistics_firstfive.pdf)” Ch. 1 and 2.
++ Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
++ "[Why self driving cars must be programmed to kill](https://www.technologyreview.com/s/542626/why-self-driving-cars-must-be-programmed-to-kill/)"
+
+---
+
+#Assignment 1
++ Implement the sorting algorithm you came up with in pseudocode with Python
++ Test the sorting algorithm with a list of 10, 100, 1000 random numbers and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Assignment 2
++ Implement the search algorithm you came up with in pseudocode with Python
++ Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#One last thing...
+--
+
+##Please don't call me "professor"
+![img-center-70](http://img.memefact.com/images/global3.memecdn.com/professor-cat_o_217872.jpg)
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>

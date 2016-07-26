@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: How I Learned the Significance of Correlation
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class4
+
+---
+
+#Do Now
++ Fill out [this sheet](http://bit.ly/algo2016-data)
+
+---
+
+class:center,middle
+#Assignment Review
+
+---
+
+#First of all
+![img-center-50](http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-follow-instructions-12.png)
+
+---
+
+#Assignments
++ Some are still committing other files<br>
+--
+
+...Don't do that
+--
+
++ Add feedback to your PRs
+--
+
++ .red[Don't commit changes to other student's files]
+
+---
+
+#Assignment 1
++ Implement the sorting algorithm you came up with in pseudocode with Python
++ Test the sorting algorithm with a list of 10, 100, 1000 random numbers and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Assignment 2
++ Implement the search algorithm you came up with in pseudocode with Python
++ Test the search algorithm with a list of 10,100,1000 random numbers (sorted with your sorting algorithm) and compare the result using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) to time your code and submit your results in [code comments](http://www.pythonforbeginners.com/comments/comments-in-python)
+
+---
+
+#Readings
++ Hon, Keone. “[An Introduction to Statistics.](../class3/reading/statistics_firstfive.pdf)” Ch. 1 and 2.
++ Ben Wellington "[Mapping the Sharing Economy](http://iquantny.tumblr.com/post/110747103479/mapping-the-sharing-economy-an-in-depth-view-of)"
++ ["Netflix knows exactly how long you’ll look for something to watch before giving up" Quartz](http://qz.com/622316/netflix-knows-exactly-how-long-youll-look-for-something-to-watch-before-giving-up/)
+
+---
+
+#Goals
+--
+
++ Review statistics 
+--
+
++ Discuss exploratory data analysis
+--
+
++ Practice performing statistical analysis in Python using pandas
+
+---
+
+#Reading Review
+
+---
+
+class:center,middle
+#Introduction to Statistics
+
+---
+class:center,middle
+> We are drowning in information and starving for knowledge.
+
+##Rutherford D. Roger
+
+---
+
+#Why Statistics?
+--
+
++ Tools for extracting meaning from data
+--
+
++ Commonly understood ways of communicating meaning to others
+
+---
+
+#Histogram
+--
+
++ Charts the frequency of instances in the data
+--
+
++ Shows the frequency distribution
+--
+
++ Values are grouped into class intervals
+--
+
++ Best to have a consistent size to class intervals
+--
+
+
+![img-left-45](../images/hist1.png)
+--
+
+![img-right-45](../images/hist2.png)
+
+####http://mathematica.stackexchange.com/questions/59520/histogram-with-variable-bin-size
+
+---
+
+#Read in the data from the class
+```pandas
+import pandas as pd
+%matplotlib inline
+
+df = pd.read_csv("Data_Collection_Sheet.csv")
+```
+---
+
+#Generate a histogram in Python
+
+```pandas
+df.hist()
+```
+![img-center-55](../images/collection_hist.png)
+--
+
+##Check out the [documentation](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.hist.html)
+
+---
+
+#Generate a histogram in Python
+
+```python
+df["height (inches)"].hist(bins=20)
+```
+--
+
+![img-center-70](../images/height_hist.png)
+
+---
+
+class:center,middle
+#Distributions of Data
+
+---
+
+#Normal Distribution
+![img-center-80](../images/dist_normal.png)
+
+---
+
+#Long-tail Distribution
+![img-center-80](../images/dist_lt.png)
+
+---
+
+#Bi-Modal Distribution
+![img-center-100](../images/dist_bm.png)
+
+---
+
+#Mean
+--
+
++ A representative value for the data
+--
+
++ Usually what people mean by “average”
+--
+
++ Calculate by adding all the values together and dividing by the number instances
+--
+
++ Sensitive to extremes
+--
+
+
+```python
+df.mean()
+```
+--
+
+```
+height (inches)                 66.623477
+age (years)                     29.500000
+siblings (not including you)     1.500000
+dtype: float64
+```
+---
+
+#Median
+--
+
++ The “middle” value of a data set
+--
+
++ Center value of a data set with an odd number of values
+--
+
++ Sum of two middle values divided by 2 if the number of items in a data set is even
+--
+
++ Resistant to extreme values
+--
+
+![img-center-100](../images/median_balance.png)
+
+--
+
+```python
+df.median()
+```
+---
+
+#Median vs Mean
+![img-center-100](../images/mean_vs_median.png)
+
+####Mean
+```
+height (inches)                 66.623477
+age (years)                     29.500000
+siblings (not including you)     1.500000
+```
+####Median
+```
+height (inches)                 66.5
+age (years)                     27.0
+siblings (not including you)     1.0
+```
+---
+
+#Mode
+--
+
++ The most frequent value in a dataset
+--
+
++ Often used for categorical data
+![img-right-50](../images/mode.png)
+
+--
+
+```python
+df.mode()
+```
+
+---
+
+#Measures of Central Tendency
+--
+
++ Quantitative data tends to cluster around some central value
+--
+
++ Contrasts with the spread of data around that center (i.e. the variability in the data)
+--
+
++ Mean is a more precise measure and more often used
+--
+
++ Median is better when there are extreme outliers
+--
+
++ Mode is used when the data is categorical (as opposed to numeric)
+
+---
+
+class:center,middle
+#Measuring Variability
+
+---
+
+#Range
+--
+
++ The gap between the minimum value and the maximum value
+--
+
++ Calculated by subtracting the minimum from the maximum
+--
+
+```python
+df["height (inches)"].max() - df["height (inches)"].min()
+```
+
+---
+
+#Quantiles
+--
+
++ Median splits the data set into two equal groups
+--
+
++ Quartiles split the data into four equal groups
+--
+
++ First quartile is 0-25% of the data
+--
+
++ Second quartile is 25-50% of the data
+--
+
++ Third quartile is 50-75% of the data
+--
+
++ Fourth quartile is 75-100% of the data
+--
+
+```python
+df.quantile(q=0.25) #1st Quartile
+df.quantile(q=0.5) #2nd Quartile (Median)
+df.quantile(q=0.75) #3rd Quartile
+```
+---
+
+#Interquartile Range
+--
+
++ “Middle” 50% of data (between 1st Quartile and 3rd Quartile)
+--
+
+![img-center-65](../images/iqr.png)
+
+```python
+df['height (inches)'].quantile(q=0.75) - df['height (inches)'].quantile(q=0.25)
+```
+
+---
+
+#Outliers
+--
+
++ Any data points less than 1.5x the IQR or greater than 1.5x the IQR are considered outliers
+--
+
++ Helps identify data points that may skew the analysis
+--
+
++ Focus on the “meat” of the data
+
+---
+
+#Outliers
+![img-center-35](../images/outlier.png)
+http://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/ 
+
+---
+
+#Standard Deviation
+--
+
++ The average distance of each data point from the mean
+--
+
++ Larger the standard deviation, the greater the spread
+--
+
+![img-center-100](../images/std1.png)
+
+---
+
+#Standard Deviation
+![img-center-100](../images/std_breakdown.png)
+
+---
+
+#Calculating Standard Deviation
+--
+
++ Subtract the mean from each data point
+--
+
++ Square the result
+--
+
++ Sum them together
+--
+
++ Divide by the number of instances (minus 1)
+--
+
++ Take the square root
+
+---
+
+#Calculating Standard Deviation
+[![img-center-45](https://thekubicle.com/assets/lesson_images/stdev.gif)](https://thekubicle.com/lessons/variance-and-standard-deviation)
+--
+
+###or
+--
+
+```python
+df.std()
+```
+```
+height (inches)                 3.239595
+age (years)                     7.676495
+siblings (not including you)    1.057850
+```
+
+---
+
+#Measures of Variability
+--
+
++ Describe the distribution of our data
+--
+
++ Range (Maximum – Minimum)
+--
+
++ Inter-quartile Range
+--
+
++ Standard Deviation
+--
+
++ Identification of outliers (1.5 x IQR)
+
+---
+
+#Descriptive Statistics
+--
+
++ Quantitatively describe the main features of a dataset
+--
+
++ Help distinguish distributions and make them comparable
+
+---
+
+#Exploratory Data Analysis
+--
+
++ Goal -> Discover patterns in the data
+--
+
++ Understand the context
+--
+
++ Summarize fields
+--
+
++ Use graphical representations of the data
+--
+
++ Explore outliers
+
+--
+
+###Tukey, J.W. (1977). Exploratory data analysis. Reading, MA: Addison-Wesley.
+
+---
+
+class:center,middle
+#10 Min Break
+![img-center-90](http://imgs.xkcd.com/comics/boyfriend.png)
+Source: https://xkcd.com/539/
+
+---
+
+#Correlations
+![img-center-100](../images/corr1.png)
+###How do we measure this relationship?
+
+---
+
+#Coefficient of Correlation
+--
+
++ Quantifies the amount of shared variability between variables
+--
+
++ Ranges between -1 and +1 
+--
+
++ Negative numbers are inversely proportional
+--
+
++ Positive numbers are directly proportional
+--
+
++ The closer to either -1 or +1, the greater the correlation
+
+---
+
+#Coefficient of Correlation
+![img-center-100](../images/corr3.png)
+http://www.statisticshowto.com/what-is-the-correlation-coefficient-formula/
+
+
+---
+
+#Coefficient of Correlation
+![img-center-100](../images/corr2.png)
+
+http://pixshark.com/correlation-examples.htm 
+
+---
+
+#Let's calculate the heigh ~ weight correlation
++ Read in the `height_weight.xlsx` file from the `class4/data` folder
++ Run the `corr()` function
++ Interpret the result
+
+---
+
+#Correlations - Height and Weight
+![img-center-100](../images/corr1.png)
+###These are highly positively correlated (r=0.87779)
+
+---
+
+#Correlations - Recycling and Median Income
+![img-center-medium](../images/corr6.png)
+###These are even slightly more correlated (r=0.88478)
+
+http://iquantny.tumblr.com/post/79846201258/the-huge-correlation-between-median-income-and
+
+---
+
+#Correlations
+![img-center-ml](../images/corr4.png)
+
+---
+
+#Correlations
+![img-center-100](../images/corr5.png)
+
+---
+
+#Correlations
+![img-center-100](../images/corr5.png)
+##Correlation does not imply causation
+
+---
+
+class:center,middle
+#Why am I doing this with you?
+
+---
+
+#Readings
++ "Brexiting Yourself In The Foot: Why Britain's Eurosceptic Regions Have Most To Lose From Eu Withdrawal" http://www.cer.org.uk/insights/brexiting-yourself-foot-why-britains-eurosceptic-regions-have-most-lose-eu-withdrawal (Extra credit if you can recreate their analysis)
+
+---
+
+#Assignment 1
++ Perform a basic statistical analysis of the time DOT 311 (table is called `dot_311`) complaints are open (subtract closed date from created date)
++ Connect to the database to get the data and do the analysis. Submit the code through Github and type up your results in your PR
+
+```
+Host: training.c1erymiua9dx.us-east-1.rds.amazonaws.com
+Port: 5432
+Database: training
+Username: dot_student
+Password: qgis
+```
+---
+
+#Assignment 2
++ Using the `2013_NYC_CD_MedianIncome_Recycle.xlsx` file, calculate the correlation between the recycling rate and the median income. Discuss your findings in your PR.
+
+---
+
+#Assignment 3
++ Using the `heights_weights_genders.csv`, analyze the difference between the height weight correlation in women and men.
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>

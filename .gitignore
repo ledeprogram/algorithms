@@ -1,0 +1,4 @@
+*.pptx
+images/_rejects/
+*.ipynb_checkpoints
+.DS_Store
