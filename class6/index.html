@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: 'Cause I got tests
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class6
+
+---
+
+#Do Now 6
++ 
++ Please add a reaction in your PR (even if it's just an emoji)
+---
+
+#Reading/Watching
++ "[Not Even Scientists Can Easily Explain P-values](http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/)"
++ "[Last Week Tonight with John Oliver: Scientific Studies](https://youtu.be/0Rnq1NpHdmw)"
+
+---
+
+#Assignment 1
++ Use the data from `heights_weights_genders.csv` to create a simple predictor that takes in a person's height and guesses their weight based on a model using all the data, regardless of gender
++ Find the weights and use those in your function (i.e. don't generate a model each time)
+
+---
+
+#Assignment 2
++ Create two models for the relationship between height and weight based on gender 
++ Modify the code in Assignment 1 to ask for a person's gender as well as their height to produce an estimate of a person's weight using the models you created
++ Find the weights and use those in your function (i.e. don't generate a model each time)
+
+---
+
+#Assignment 3
++ Using the data from the `2013_NYC_CD_MedianIncome_Recycle.xlsx` file, create a predictor using the weights from the model. This time, use the built in attributes in your model rather than hard-coding them into your algorithm
+
+---
+
+#Assignment 4
++ Using data from [this FiveThirtyEight post](http://53eig.ht/1e2aV6U), write code to calculate the correlation of the responses from the poll.
++ Respond to the story in your PR. Is this a good example of data journalism? Why or why not?
+
+---
+
+#Goals for today
++ Discuss statistical measures
+
+
+---
+
+#Null Hypothesis
+--
+
++ Start with the belief there is no relationship between variables
+--
+
++ Either reject the null hypothesis or fail to reject the hypothesis
+--
+
++ “Failing to reject” doesn’t mean we accept the null -> we may not have enough data
+--
+
++ The alternative hypothesis is that there is a relationship between the variables
+
+---
+
+#p-value
++ The probability of getting results at least as extreme as those observed, given that the null hypothesis is correct
+--
+
+![img-center-70](https://upload.wikimedia.org/wikipedia/en/0/00/P-value_Graph.png)
+
+#####[Source](https://en.wikipedia.org/wiki/File:P-value_Graph.png). This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License
+
+---
+
+#p-value
+--
+
+![img-center-100](../images/null.png)
+
+---
+
+class:center,middle
+#A few other important measures
+
+---
+
+#t-test
+
+---
+
+#chi-squared test
+
+---
+
+class:center,middle
+#10 Min Break
+![img-center-100](http://imgs.xkcd.com/comics/cell_phones.png)
+Source: http://xkcd.com/925/
+---
+
+#Data Types
+--
+
++ Nominal (Categorical) - Examples: ID numbers, eye color, zip codes
+--
+
++ Ordinal -  Examples: rankings (e.g., taste of potato chips on a scale from 1-10), grades, height in {tall, medium, short}
+--
+
++ Interval - Examples: calendar dates, temperatures in Celsius or Fahrenheit
+--
+
++ Ratio - Examples: temperature in Kelvin, length, time, counts
+
+---
+
+#Continuous values
+--
+
++ Has real numbers as attribute values
+--
+
++ Examples: temperature, height, or weight
+--
+
++ Practically, real values can only be measured and represented using a finite number of digits
+--
+
++ Continuous attributes are typically represented as floating-point variables
+---
+
+#Discrete values
+--
+
++ Has only a finite or countably infinite set of values
+--
+
++ Examples: zip codes, counts, or the set of words in a collection of documents
+--
+
++ Often represented as integer variables
+--
+
++ Note: binary attributes are a special case of discrete attributes
+
+---
+
+#Interpreting Coefficients
+--
+
++ Positive coefficients indicate a positive effect on the outcome
+--
+
++ Negative coefficients indicate a negative effect on the outcome
+--
+
++ Greater distance from 0, the greater the effect
+--
+
++ Possible to trim features with coefficients near 0 to get better results
+
+---
+
+#Simple Logistic Regression
+--
+
++ Predicts the probability an event occurs (classification)
+--
+
++ Fits data to a logit function logistic curve
+--
+
++ Used to explore associations between one binary outcome and one (continuous, ordinal, or categorical) feature
+--
+
++ Lets you answer questions like, "how does gender affect the probability of having hypertension?”
+
+---
+
+#Multiple Logistic Regression
+--
+
++ Used to explore associations between one binary outcome variable and two or more features (which may be continuous, ordinal or categorical)
+--
+
++ Coefficients describe the nature of the relationship
+
+---
+
+#How It Works
+--
+
++ Given a set of features, the algorithm calculates the probability it belongs to class 1
+--
+
++ P(y=1)/P(y=0) 
+--
+
++ Then take the logarithm of the odds ratio
+--
+
++ Provides a result bounded by 0 and 1
+--
+
++ Predicts the class for the instance
+
+---
+
+#Resources
++ [Logistic regression in Python]( http://blog.yhathq.com/posts/logistic-regression-and-python.html)
++ [Logistic regression with scikit-learn ](http://nbviewer.ipython.org/github/justmarkham/gadsdc1/blob/master/logistic_assignment/kevin_logistic_sklearn.ipynb)
++ [Classification in Python with scikit-learn](http://nbviewer.ipython.org/urls/s3.amazonaws.com/datarobotblog/notebooks/classification_in_python.ipynb)
+
+---
+
+#Resources
+![img-center-40](https://www.nostarch.com/sites/default/files/imagecache/product_full/9781593274191.png)
+
+https://www.nostarch.com/regression
+
+---
+
+#Readings
+
+---
+
+#Assignment 1
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
