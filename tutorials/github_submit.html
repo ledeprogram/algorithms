@@ -128,6 +128,24 @@ class:center,middle
 + [Github Help "Syncing a Fork"](https://help.github.com/articles/syncing-a-fork/)
 + [Pull Requests from the commandline](https://hub.github.com/)
 
+---
+
+#Some useful code snippets
+```bash
+#Checkout file from main repository (if you changed a file you shouldn't have)
+git checkout upstream/gh-pages path/to/file
+
+#remove a file from your Github and your system after you've made a commit
+git rm path/to/file
+
+#remove a directory from your Github and your system after you've made a commit
+git rm -r path/to/file
+
+#When first using git, make sure you set the push behavior to simple
+#This helps with pushing new branches to Github
+git config push.default simple
+```
+
     </textarea>
     <script src="../js/remark-latest.min.js">
     </script>
