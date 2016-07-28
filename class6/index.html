@@ -19,20 +19,16 @@ class: center,middle
 
 ![img-center-50](../images/cl_logo.png)
 - - -
-#Algorithms: 'Cause I got tests
+#Algorithms: 'Cause one day of regression just isn't enough
 ##Richard Dunks, Instructor
 ###Follow along: http://bit.ly/algo2016-class6
 
 ---
 
 #Do Now 6
-+ 
++ Open Class6_DoNow.ipynb
++ Create a copy of the notebook and name it
 + Please add a reaction in your PR (even if it's just an emoji)
----
-
-#Reading/Watching
-+ "[Not Even Scientists Can Easily Explain P-values](http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/)"
-+ "[Last Week Tonight with John Oliver: Scientific Studies](https://youtu.be/0Rnq1NpHdmw)"
 
 ---
 
@@ -61,8 +57,19 @@ class: center,middle
 ---
 
 #Goals for today
-+ Discuss statistical measures
++ Introduce `sklearn` for python
++ Briefly discuss polynomial functions
++ Discuss the null hypothesis and p-values
++ Discuss data types
++ Introduce logistic regression
 
+
+
+---
+
+#Reading/Watching
++ "[Not Even Scientists Can Easily Explain P-values](http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/)"
++ "[Last Week Tonight with John Oliver: Scientific Studies](https://youtu.be/0Rnq1NpHdmw)"
 
 ---
 
@@ -99,16 +106,31 @@ class: center,middle
 
 ---
 
-class:center,middle
 #A few other important measures
+--
+
++ [F-statistic](http://www.statisticshowto.com/f-statistic/) -> test to determine whether the results are statistically significant from the null hypothesis and forms the basis of the p-value
+--
+
++ [t-test](http://blog.minitab.com/blog/statistics-and-quality-data-analysis/what-are-t-values-and-p-values-in-statistics) -> tests whether two data sets are significantly different from each other
+---
+
+#A few other important measures
++ [chi-squared test](http://hamelg.blogspot.com/2015/11/python-for-data-analysis-part-25-chi.html) -> test for how likely any observed difference between sets arose by chance for categorical variables
+--
+
++ [Adjusted r^2](http://blog.minitab.com/blog/adventures-in-statistics/multiple-regession-analysis-use-adjusted-r-squared-and-predicted-r-squared-to-include-the-correct-number-of-variables) -> provides a more accurate estimation of coefficient of determination when using a large number of explanatory variables (more terms will inflate r^2 artificially)
 
 ---
 
-#t-test
+class:center,middle
+#How much do you want to get into test statistics and probability distributions?
 
 ---
 
-#chi-squared test
+class:center,middle
+#How are you doing with the math?
+![img-center-100](http://i.giphy.com/5wWf7Hi5aXu3JiXXwli.gif)
 
 ---
 
@@ -147,6 +169,7 @@ Source: http://xkcd.com/925/
 --
 
 + Continuous attributes are typically represented as floating-point variables
+
 ---
 
 #Discrete values
@@ -162,6 +185,11 @@ Source: http://xkcd.com/925/
 --
 
 + Note: binary attributes are a special case of discrete attributes
+
+---
+
+class:center,middle
+#A quick note on regression coefficients
 
 ---
 
@@ -181,6 +209,16 @@ Source: http://xkcd.com/925/
 
 ---
 
+#Linear regression vs classification
+--
+
++ Linear Regression -> predict continuous ordinal value
+--
+
++ Classification -> predict discrete categorical value
+
+---
+
 #Simple Logistic Regression
 --
 
@@ -197,13 +235,7 @@ Source: http://xkcd.com/925/
 
 ---
 
-#Multiple Logistic Regression
---
-
-+ Used to explore associations between one binary outcome variable and two or more features (which may be continuous, ordinal or categorical)
---
-
-+ Coefficients describe the nature of the relationship
+![img-center-100](../images/log1.png)
 
 ---
 
@@ -226,6 +258,26 @@ Source: http://xkcd.com/925/
 
 ---
 
+![img-center-100](../images/log_lin.png)
+
+---
+
+#Multiple Logistic Regression
+--
+
++ Used to explore associations between one binary outcome variable and two or more features (which may be continuous, ordinal or categorical)
+--
+
++ Coefficients describe the nature of the relationship
+--
+
++ Assumes independence of explanatory variables
+--
+
++ Adjusted r^2 is a more accurate measure of the coefficient of determination than a simple r^2 calculation
+
+---
+
 #Resources
 + [Logistic regression in Python]( http://blog.yhathq.com/posts/logistic-regression-and-python.html)
 + [Logistic regression with scikit-learn ](http://nbviewer.ipython.org/github/justmarkham/gadsdc1/blob/master/logistic_assignment/kevin_logistic_sklearn.ipynb)
@@ -241,10 +293,18 @@ https://www.nostarch.com/regression
 ---
 
 #Readings
++ [NYPD Nuisance Abatement Actions Boot Hundreds](http://interactive.nydailynews.com/2016/02/nypd-nuisance-abatement-actions-boot-hundreds/)
 
 ---
 
-#Assignment 1
+#Exercises
+--
+
+##None
+--
+
+##Have a good weekend
+![img-center-60](http://i.giphy.com/l396OcKg1yhneep3i.gif)
 
 ---
 class:center,middle
