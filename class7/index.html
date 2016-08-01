@@ -57,6 +57,11 @@ class:center,middle
 
 ---
 
+class:center,middle
+![img-center-100](../images/feed_machine.png)
+
+---
+
 #Feature Engineering
 ![img-center-90](../images/sim1.png)
 
@@ -69,11 +74,6 @@ class:center,middle
 
 #Feature Engineering
 ![img-center-90](../images/sim3.png)
-
----
-
-class:center,middle
-![img-center-100](../images/feed_machine.png)
 
 ---
 
@@ -116,6 +116,46 @@ http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-f
 --
 
 + Create dummy variables (but be sure to leave one out)
+--
+
++ Transform values to a standard range (ex. 0 to 1)
+
+---
+
+# Transforming values example
+
+```python
+from sklearn import preprocessing
+
+x = df[['Height','Weight']].values #returns a numpy array
+min_max_scaler = preprocessing.MinMaxScaler()
+x_scaled = min_max_scaler.fit_transform(x)
+
+```
+---
+
+#Dummy Variable Trap
+--
+
++ Encoding each category of a variable will create variables that are highly correlated 
+--
+
++ This is because they're encoding the same attribute
+--
+
++ This will distort the result
+--
+
++ Dropping one of the dummy variables **should** get you out of the trap
+--
+
++ Assuming every other variable is truly independent
+
+---
+
+class:center,middle
+#Let's check that out
+##FeatureEngineering.ipynb
 
 ---
 
@@ -129,10 +169,10 @@ http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-f
 
 ---
 
-#Dummy Variables
-+ How we include categorical variables into regressions
-+ code the 
-
+class:center,middle
+#10 Min Break
+![img-center-80](http://imgs.xkcd.com/comics/flow_charts.png)
+Source: https://xkcd.com/518/
 
 ---
 
@@ -146,8 +186,165 @@ http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-f
 
 ---
 
+class:center,middle
+#Let's try another way of classifying instances
+
+---
+
+#First of all, some terms
+--
+
++ "instances" -> an occurance (row) in our data
+--
+
++ "features" -> the attributes associated with each instance used to predict some value
+--
+
++ "target variable" -> the class we're trying to predict
+--
+
++ "classifier" -> the model we're using to classify instances
+
+---
+
+#Decision Trees
++ Intuition: Create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features
+--
+
+![img-center-65](https://upload.wikimedia.org/wikipedia/commons/4/48/DecisionCalcs.jpg)
+
+[Source](https://commons.wikimedia.org/wiki/File:DecisionCalcs.jpg) License [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0)
+
+---
+
+#Decision Trees
+--
+
++ These are usually made by hand
+--
+
++ We can have a computer calculate the best splits using a "greedy" model that strives for purity at each cut
+--
+
++ Which of these cuts gives us a more pure cut between Class 0 (`C0`) and Class 1 (`C1`)?
+
+![img-center-100](../images/gini1.png)
+
+---
+
+#Decision Trees - Iris Dataset
+--
+![img-right-40](https://archive.ics.uci.edu/ml/assets/MLimages/Large53.jpg)
++ 50 instances based on measurements of an iris plant
+--
+
++ The measured attributes include sepal width and sepal length
+--
+
++ 3 classes of iris (Iris Setosa, Iris Versicolour, Iris Virginica)
+--
+
++ The goal is to classify each iris into the right category (`DecisionTree.ipynb`)
+
+---
+
+#Supervised Learning
+--
+
++ The target value (y) is known in advance
++ Example: # of borrowers who default on their loan
+--
+
++ We use the relationship between the features (x<sub>1</sub>, x<sub>2</sub>,...,x<sub>n</sub>) and the target value for instances where y is known to create a predictor
+--
+
++ We can use that predictor for instances were y isn't known
+--
+
++ This is called [inductive reasoning](https://en.wikipedia.org/wiki/Inductive_reasoning) and yields a highly probable result
+
+---
+
+#Supervised Learning
+![img-center-90](../images/sup_learn1.png)
+---
+
+#Machine Learning
+>Machine learning studies computer algorithms for learning to do stuff.
+
+###-[Princeton Machine Learning Class syllabus](http://www.cs.princeton.edu/courses/archive/spr08/cos511/scribe_notes/0204.pdf)
+
+---
+
+class:center,middle
+#But how good is this predictor?
+
+---
+
+#Validating the model
+--
+
++ We can estimate how good our model will do by testing it with labeled data not used to create the model
+--
+
++ A **training set** is used to build the model
+--
+
++ A **test set** is used to determine the accuracy of the model on unseen data
+--
+
++ Usually, the given data set is divided into training and test sets, with training set used to build the model and test set used to validate it
+--
+
++ A **validation set** is another data set that can additionally be used to test the model
+
+---
+
+# Validating the model
++ We use several different measures to tell us how good our model is at it's task
+--
+
++ Accuracy -> What percentage did it get right?
+--
+
++ Precision -> How reliable is the estimate (correctly predicted a class)
+--
+
++ Recall -> How well did it classify the items in the class
+
+---
+
+#Accuracy
+
+![img-center-100](../images/accuracy1.png)
+
+---
+
+#Precision and Recall
+![img-center-100](../images/valid1.png)
 
 
+---
+
+#Precision and Recall
+![img-center-35](https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/330px-Precisionrecall.svg.png)
+[Source](https://commons.wikimedia.org/wiki/File:Precisionrecall.svg) License [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
+---
+
+class:center,middle
+#Still don't get this? [Try this](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
+
+
+---
+
+#Readings
++ Building Machine Learning Systems with Python "Classification"
++ Learning scikit-learn: Machine Learning in Python "Classification"
+
+---
+
+#Assignment 1
++ 
 
 ---
 class:center,middle
