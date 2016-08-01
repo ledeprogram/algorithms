@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: Teaching the Machines to Learn
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class7
+
+---
+
+#Do Now
++ 
+
+---
+
+#Readings
++ [NYPD Nuisance Abatement Actions Boot Hundreds](http://interactive.nydailynews.com/2016/02/nypd-nuisance-abatement-actions-boot-hundreds/)
+
+---
+
+#Goals
++ Discuss feature engineering
++ Introduce machine learning
++ Introduce decision trees
+
+---
+
+class:center,middle
+#There's a few things we need to talk about...
+
+---
+
+class:center,middle
+![img-center-100](../images/data_prep.png)
+
+---
+
+class:center,middle
+#We need to encode attributes (qualitative and quantitative) into representations that are easily understood by machine learning algorithms
+
+---
+
+#Feature Engineering
+![img-center-90](../images/sim1.png)
+
+---
+
+#Feature Engineering
+![img-center-90](../images/sim2.png)
+
+---
+
+#Feature Engineering
+![img-center-90](../images/sim3.png)
+
+---
+
+class:center,middle
+![img-center-100](../images/feed_machine.png)
+
+---
+
+# Feature Engineering - The Importance
+> ##Actually the success of all machine learning algorithms depends on how you present the data.  
+> + Mohammad Pezeshki
+
+http://www.quora.com/What-are-some-general-tips-on-feature-selection-and-engineering-that-every-data-scientist-should-know
+
+---
+
+#Feature Engineering - A Definition
+> ##The process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data
+
+http://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/
+---
+
+#Feature Engineering - Important Factors
+--
+
++ The data you’re using
+--
+
++ The domain you’re working in
+--
+
++ The models you’re working with
+
+---
+
+# Feature Engineering - Strategies
+--
+
++ Use integers to encode features
+
+![img-center-80](../images/feature1.png)
+--
+
++ Discretize continuous values
+--
+
++ Create dummy variables (but be sure to leave one out)
+
+---
+
+#Feature Engineering - Keep In Mind
+--
+
++ Choices made will impact the results
+--
+
++ It's more an art than a science
+
+---
+
+#Linear regression vs classification
+--
+
++ Linear Regression -> predict continuous ordinal value
+--
+
++ Classification -> predict discrete categorical value
+
+---
+
+
+
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
