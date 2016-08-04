@@ -19,14 +19,25 @@ class: center,middle
 
 ![img-center-50](../images/cl_logo.png)
 - - -
-# Algorithms: How I Learned to Make My Regressions Linear
+# Algorithms
 ## Richard Dunks, Instructor
 ### Follow along: http://bit.ly/algo2016-class8
 
 ---
 
-# Do Now
-+
+# Mid-Course Survey Results
+--
+
++ 11 responses (out of 24 students, ~46%)
+--
+
++ Thank you to those who filled it out
+--
+
++ We have some issues to address and you'll notice some changes
+--
+
++ So if you want to have your voice heard, please [fill it out](https://goo.gl/forms/U7rSq0o9uv1c9r4z1) if you haven't already
 
 ---
 
@@ -43,7 +54,7 @@ class: center,middle
 
 ---
 
-#Decision Trees
+# Decision Trees
 --
 
 + We can have a computer calculate the best splits using a "greedy" model that strives for purity at each cut
@@ -55,8 +66,13 @@ class: center,middle
 
 ---
 
-class:center,middle
 # How do we calculate purity?
+--
+
++ Entropy and Information Gain
+--
+
++ Gini Index
 
 ---
 
@@ -66,12 +82,12 @@ class:center,middle
 + Measurement of order (or lack there of)
 --
 
-+ Increases as the set is more perfectly heterogenous and diminishes as the set is more homogenous
++ Increases as the set is more perfectly heterogenous and diminishes as the set is more homogenous (all positive or all negative)
 --
 
 
 
-![img-center-60](../images/entropy2.png)
+![img-center-55](../images/entropy2.png)
 
 ---
 
@@ -81,12 +97,13 @@ class:center,middle
 
 
 ![img-center-100](../images/entropy1.png)
-###_p_ is number of positives and _n_ is number of negatives
+### _p_ is number of positives and _n_ is number of negatives
 
 ---
 
 # Information Gain
 + The reduction in entropy resulting from greater purity in a split
+--
 
 
 ![img-center-100](../images/infogain1.png)
@@ -188,16 +205,38 @@ Gain = 0.9911 – (6/9 * 1 + 3/9 * 0.9183 )
 ### Which is best?
 --
  (Weight <= 160)
+--
+ .red[Information gain = 0.59]
 
 ---
 
-# Information Gain
+#Gini Index
 --
 
-+ And we keep doing this until we hit a stop condition
++ Similar to Information Gain in calculating purity
 --
 
-+ You will never have to calculate information gain
++ Calculate the purity based on probabilities
+--
+
++ Slightly faster to calculate
+
+---
+
+# Calculating purity
+--
+
++ No matter which measure we use, we keep doing this until we hit a stop condition
+--
+
+
+>### "Studies have shown that the choice of impurity measure has little effect on the performance of decision tree induction algorithms. This is because many impurity measures are quite consistent with each other [...]."
+>### [Introduction to Data Mining](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
+---
+
+# Calculating purity
++ No matter which measure we use, we keep doing this until we hit a stop condition
++ You will never have to calculate purity
 --
 
 + But you should understand the concept
@@ -256,9 +295,6 @@ Gain = 0.9911 – (6/9 * 1 + 3/9 * 0.9183 )
 + Holdout -> Reserve portion of data for training and testing 
 --
 
-+ Random subsampling -> Repeated holdout of sample of data
---
-
 + Cross validation -> Partition data into k disjoint subsets and test
 
 ---
@@ -297,6 +333,40 @@ class:center,middle
 #10 Min Break
 ![img-center-100](http://imgs.xkcd.com/comics/herpetology.png)
 Source: http://xkcd.com/867/
+
+---
+
+# Confusion
+![img-center-80](http://i.giphy.com/uPIq9daczoGyI.gif)
+--
+
+## It seems you all have it
+
+---
+
+# Now you're going to teach yourselves
+--
+
++ Working in groups, you're going to take each line of code in one of the examples we've used and come up with a presentation to the class and take questions
+--
+
++ Your task is to explain every package and function that is used to the best of your ability
+--
+
++ Use manuals, tutorials, and the raw source code to explain it for the class
+--
+
++ Make sure everyone in your group understands as well
+
+---
+
+# Groups
++ SimpleLinearRegression_Sklearn.ipynb<br>`Hon Georgia Paolo Kate`
++ SimpleLinearRegression_Statsmodels.ipynb<br>`Monica Gianna DJ Jo`
++ RegressionExample.ipynb `Harsha June Mathias Sasha`
++ FeatureEngineering.ipynb<br>`Barney Mercy(B) Shuyao Radhika`
++ DecisionTrees.ipynb `Paul Shannon Mercy(E) Olaya`
++ DecisionTrees-Valication.ipynb<br>`JJ Rebecca Shengying Sean`
 
 ---
 class:center,middle
