@@ -26,19 +26,115 @@ class: center,middle
 ---
 
 <!-- insert content here -->
+
+# Imports
+
+`import pandas as pd` #import pandas – a tool for data analysis and data structures. We import it as ‘pd’, which means that when we want to use the tool, we’ll refer to it as ‘pd’ in the code.
+
+`%matplotlib inline` #in .ipynb you can use % or %% to call on the IPython ‘magic functions’. Line magics (%) get the rest of the line as an argument. Cell magics (%%) get as an argument the whole cell. [Source](https://ipython.org/ipython-doc/3/interactive/tutorial.html)
+
+--
+
+`from sklearn import datasets` # ScienceKit Learn: a machine learning module; Built on NumPy, SciPy, and matplotlib
+
+--
+
+`from pandas.tools.plotting import scatter_matrix` # alternative to matplotlib – actually, we can get rid of this line because we use matplotlib instead
+
+`import matplotlib.pyplot as plt` #We are importing matplotlib.pyplot – which is a collection of functions that “make matplotlib work like MATLAB.” Anytime we write plt followed by a period, we are calling on a function from this collection of functions. 
+
+---
+
+# Loading the dataset
+
+`iris = datasets.load_iris()` #Load a dataset called iris, and give it a name (‘iris’) by which we can refer to it 
+
+datasets.load_iris() returns data, datatype bunch. 
+
+“Bunch is a “Dictionary-like object, the interesting attributes are:
+* ‘data’, the data to learn, 
+* ‘target’, the classification labels, 
+* ‘target_names’, the meaning of the labels, 
+* ‘feature_names’, the meaning of the features,
+*‘DESCR’, the full description of the dataset.”
+
+[Source: http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris)
+
+---
+
+`x = iris.data[:,2:`] #the attributes; dataset.data[rows, columns] ← [all rows, from the second column on]
+#returns a list-like structure of values in each column e.g. [ [1 2] [3 4] [5 6] ]
+`y = iris.target` #the target variable 
+#returns a list-like structure of target classifications e.g. [0,1,0,0,1,0]
+
+---
+
+`from sklearn import tree` # module for decision tree models. See the [Sci-Kit Learn documentation](http://scikit-learn.org/stable/modules/tree.html#tree)
+
+`dt = tree.DecisionTreeClassifier()` # Creates our empty tree classifier; uses “gini” as criterion for splitting into nodes by default
+# sklearn.tree is a module which includes decision tree-based models for classification and regression.
+
+`dt = dt.fit(x,y)`  #creates model using our attributes and target
+
+(vs `lm.fit()`: we need to instantiate dt)
+
+---
+# Create .dot file
+
+`from sklearn.externals.six import StringIO` # this input/output library enables us to save the tree to a file
+#StringIO allows you to read and write files as string buffer (mutable sequence of characters)
+
+`import pydotplus` # Interface to Graphviz’s Dot language. This module provides with a full interface to create handle modify and process graphs in Graphviz’s dot language. For more information about dot: http://www.graphviz.org/doc/info/output.html
+
+---
+
+#opens dot file in write mode as f:
 ```
-to center content:
-`class: center,middle`
-
-to do a new slilde: use "---"
-
-to do an animation: use "--" and make sure there's a space between them
-
-you can open the files in your browser to run them
+with open("iris.dot", 'w') as f:
+    f = tree.export_graphviz(dt, out_file=f)` # while iris.dot is open, we write the graphviz dot file to iris.dot
 ```
+
+`import os` # This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see `open()`, if you want to manipulate paths, see the `os.path` module, and if you want to read all the lines in all the files on the command line see the `fileinput` module.
+Source: https://docs.python.org/2/library/os.html
+
+`os.unlink('iris.dot')` # deletes the file	
+
+`dot_data = StringIO()` #creates an empty StringIO object that can accept either Unicode or 8-bit strings
+ 
+`tree.export_graphviz(dt, out_file=dot_data)`  #Export a decision tree in DOT format to an outfile (which is dot_data which we set to a StringIO object). This allows graphical renderings to be generated
+
+---
+
+# Create the PDF
+
+`graph = pydotplus.graph_from_dot_data(dot_data.getvalue())` #creates graph from the values in the dot_data
+`graph.write_pdf("iris.pdf")` # writes the graph to a pdf
+
+`from IPython.display import IFrame` #.display is a public api for IPython.  An IFrame is an HTML document embedded inside another HTML document on a website
+
+`IFrame("iris.pdf", width=800, height=800) `# print the pdf in an IFrame for which we’ve specified the size (800x800)
+
+---
+
+# Our beautiful tree!
+![iris-illustrated](iris.jpg)
+
+---
+
+# What if we want to access a node by name?
+
+![iris-illustrated](iris2.jpg)
+
+
+
+
 
 
 ---
+
+# Thank you!
+
+![asdf](https://media.giphy.com/media/MJmQapwL7ABTG/giphy.gif)
 
 
     </textarea>
