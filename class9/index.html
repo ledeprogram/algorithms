@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithms - Lede Program</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../slide.css"/>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Algorithms</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+---
+
+class: center,middle
+
+![img-center-50](../images/cl_logo.png)
+- - -
+#Algorithms: Trees, Trees, and More Trees
+##Richard Dunks, Instructor
+###Follow along: http://bit.ly/algo2016-class9
+
+---
+
+# Do Now
++ 
+
+---
+
+# Goals
++ Review cross-validation
++ Implement a simple cross-validation function using a simple dataset
++ Review decision trees
++ Implement a simple predictor function based on output from sci-kit learn
+
+---
+
+# Evaluation Methods
+--
+
++ Holdout -> Reserve portion of data for training and testing 
+--
+
++ Cross validation -> Partition data into k disjoint subsets and test
+
+---
+
+# Cross Validation
++ k-fold: train on k-1 partitions, test on the remaining one
+--
+
+![img-center-80](http://i.imgur.com/N9HZktu.png)
+--
+
++ Leave-one-out (k=n): Train on all of the data except one instance and test on the left out instance
+
+---
+
+# Cross Validation
++ Example of 5-fold cross validation
+![img-center-80](../images/cv1.png)
+
+---
+
+# Cross Validation
+--
+
++ After testing with each fold of the data, a training model is created from 100% of the data
+--
+
++ The performance of each fold is averaged together to generate an estimate of the model using all of the data
+--
+
++ Using all of the data maximizes the available data
+
+---
+
+class:center,middle
+# 10 Min Break
+![img-center-40](http://imgs.xkcd.com/comics/physicists.png)
+Source: http://xkcd.com/793/
+
+---
+
+
+---
+class:center,middle
+#Thank You!
+
+
+    </textarea>
+    <script src="../js/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create(
+        // {
+        //   slideNumberFormat: ""}
+        );
+    </script>
+  </body>
+</html>
