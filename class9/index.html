@@ -38,6 +38,33 @@ class: center,middle
 
 ---
 
+# Decision Tree redux
+--
+
++ We have a computer calculate the best splits using a "greedy" model that strives for purity at each cut
+--
+
++ Can use any measure of purity, including information gain/entropy or Gini Index
+
+--
+
++ Results in a set of rules we can use to classify unseen instances
+
+---
+
+
+
+
+
+---
+
+class:center,middle
+# 10 Min Break
+![img-center-40](http://imgs.xkcd.com/comics/physicists.png)
+Source: http://xkcd.com/793/
+
+---
+
 # Evaluation Methods
 --
 
@@ -78,12 +105,69 @@ class: center,middle
 
 ---
 
-class:center,middle
-# 10 Min Break
-![img-center-40](http://imgs.xkcd.com/comics/physicists.png)
-Source: http://xkcd.com/793/
+#Stratified Cross Validation
++ 
 
 ---
+
+# Cross Validation in `sklearn`
+
+---
+
+class:center,middle
+![img-center-100](http://i.giphy.com/Wow3QqPZLmgCI.gif)
+
+---
+
+# Let's see
+--
+
++ In your groups, write the pseudocode for your own 5-fold cross-validation function
+--
+
++ Take in a list of attributes, a list of target values, and a model
+--
+
++ Output an estimate of the model accuracy
+--
+<br>Your Groups<br>
+`Hon Georgia Paolo Kate`<br>
+`Monica Gianna DJ Jo`<br>
+`Barney Mercy(B) Shuyao Radhika`<br>
+`JJ Rebecca Shengying Sean`<br>
+
+---
+
+# Resources
++ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
++ 
+
+---
+
+# Readings
+
+---
+
+# Assignment 1
++ Use the tree you generated with the Iris data to code an Iris predictor
++ Use `if` statements to reproduce the decision points in the tree
++ Output the class level when you arrive at a leaf
++ Test your function on the following example
+
+```
+petal length = 4.5 cm
+petal width = 1.51 cm
+Should predict class 1 (iris versicolor)
+```
+
++ In your PR, discuss what you learned about decision trees from this exercise
+
+---
+
+# Assignment 2
++ Use the pseudocode you came up with in class to write your own 5-fold cross-validation function
++ Test the results with the sklearn cross validation function
++ In your PR, discuss what challenges you had creating this function and if it helped you better understand cross validation
 
 
 ---
