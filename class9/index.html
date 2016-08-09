@@ -34,6 +34,13 @@ class: center,middle
 
 ---
 
+class:center,middle
+# Check-in
+## Did last Thursday help?
+![img-center-70](http://i.giphy.com/3eMEdQHc11MwU.gif)
+
+---
+
 # Goals
 + Review decision trees
 + Implement a simple predictor function based on output from sci-kit learn
@@ -55,10 +62,52 @@ class: center,middle
 
 ---
 
+# Do Together
++ Using the tree we generated with the Iris data to code an Iris predictor
++ Use `if` statements to reproduce the decision points in the tree
++ Output the class level when you arrive at a leaf
++ We'll test our function on the following example
+
+```
+petal length = 4.5 cm
+petal width = 1.51 cm
+Should predict class 1 (iris versicolor)
+```
 
 
 ---
 
+#Advantages of decision trees
+--
+
++ Easy to explain
+--
+
++ Easy to implement
+--
+
++ Work with features on different scales or mix of binary and continuous features
+--
+
++ Can mix different trees together to get a better outcome -> ensemble methods
+
+---
+
+#Advantages of decision trees
++ Offer the opportunity to see the importance of features
+--
+
+```python
+# running this on the iris decision tree
+plt.plot(dt.feature_importances_,'o')
+plt.xticks(range(iris.data.shape[1]),iris.feature_names, rotation=0)
+plt.ylim(0,1)
+```
+--
+
+![img-center-70](../images/iris_feature_importance.png)
+
+---
 
 
 
@@ -149,37 +198,18 @@ class:center,middle
 `Barney Mercy(B) Shuyao Radhika`<br>
 `JJ Rebecca Shengying Sean`<br>
 
----
-
-# Resources
-+ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
-+ 
 
 ---
 
 # Readings
 + ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
-+ 
++ "Random Forests" in Introduction to Machine Learning with Python
++ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
+
 
 ---
 
 # Assignment 1
-+ Use the tree you generated with the Iris data to code an Iris predictor
-+ Use `if` statements to reproduce the decision points in the tree
-+ Output the class level when you arrive at a leaf
-+ Test your function on the following example
-
-```
-petal length = 4.5 cm
-petal width = 1.51 cm
-Should predict class 1 (iris versicolor)
-```
-
-+ In your PR, discuss what you learned about decision trees from this exercise
-
----
-
-# Assignment 2
 + Use the pseudocode you came up with in class to write your own 5-fold cross-validation function that splits the data set into 
 + Don't forget to shuffle the input before assigning to the splits
 + You can use the fit
@@ -188,7 +218,7 @@ Should predict class 1 (iris versicolor)
 
 ---
 
-# Assignment 3
+# Assignment 2
 + Using the readings, try and create a `RandomForestClassifier` for the iris dataset
 + Using a 25/75 training/test split, compare the results with the original decision tree model and describe the result to the best of your ability
 
