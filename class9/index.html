@@ -42,10 +42,18 @@ class:center,middle
 ---
 
 # Goals
+--
+
 + Review decision trees
-+ Implement a simple predictor function based on output from sci-kit learn
+--
+
 + Review cross-validation
+--
+
 + Implement a simple cross-validation function using a simple dataset
+--
+
++ Discuss topics for the rest of class
 
 ---
 
@@ -162,7 +170,7 @@ Source: http://xkcd.com/793/
 + Each fold maintains the class percentages of the overall sample
 --
 
-+ For example: if 60% of the overall dataset is classified as female, then each of the folds will also be composed of samples that are approximately 60% male
++ For example: if 60% of the overall dataset is classified as female, then each of the folds will also be composed of samples that are approximately 60% female
 --
 
 + This is useful in unbalanced classification exercises
@@ -219,9 +227,9 @@ class:center,middle
 ---
 
 # Assignment 1
-+ Use the pseudocode you came up with in class to write your own 5-fold cross-validation function that splits the data set into 
-+ Don't forget to shuffle the input before assigning to the splits
-+ You can use the fit
++ Use the pseudocode you came up with in class to write your own 5-fold cross-validation function that splits the data set into 5 equal-sized sets
++ Don't forget to shuffle the input before assigning to sets
++ You can use the `fit()`, `predict()`, and `score()` functions of your model in your functions
 + Test the results with the sklearn `cross_val_score`
 + In your PR, discuss what challenges you had creating this function and if it helped you better understand cross validation
 
@@ -234,7 +242,7 @@ class:center,middle
 ---
 
 # Assignment 3
-+ Review the code in `homework/bill_classifier.ipynb'
++ Review the code in `homework/bill_classifier.ipynb`
 + Understand the steps in creating a text classifier
 + Comment in your PR on the utility of something like this for the work you've done or would like to do
 
