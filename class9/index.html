@@ -36,8 +36,8 @@ class: center,middle
 
 class:center,middle
 # Check-in
-## Did last Thursday help?
 ![img-center-70](http://i.giphy.com/3eMEdQHc11MwU.gif)
+## Did last Thursday help?
 
 ---
 
@@ -74,7 +74,6 @@ petal width = 1.51 cm
 Should predict class 1 (iris versicolor)
 ```
 
-
 ---
 
 #Advantages of decision trees
@@ -89,7 +88,7 @@ Should predict class 1 (iris versicolor)
 + Work with features on different scales or mix of binary and continuous features
 --
 
-+ Can mix different trees together to get a better outcome -> ensemble methods
++ Can mix different trees together to get a better outcome (ensemble methods)
 
 ---
 
@@ -158,7 +157,18 @@ Source: http://xkcd.com/793/
 ---
 
 # Stratified Cross Validation
-+ 
+--
+
++ Each fold maintains the class percentages of the overall sample
+--
+
++ For example: if 60% of the overall dataset is classified as female, then each of the folds will also be composed of samples that are approximately 60% male
+--
+
++ This is useful in unbalanced classification exercises
+--
+
++ For more information, see [StratifiedKFold](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold) and the [scikit-learn Cross Validation Guide](http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedKFold.html#sklearn.cross_validation.StratifiedKFold)
 
 ---
 
@@ -196,14 +206,15 @@ class:center,middle
 `Barney Mercy(B) Shuyao Radhika`<br>
 `JJ Rebecca Shengying Sean`<br>
 
-
 ---
 
-# Readings
-+ ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
+# Assigned Readings
 + "Random Forests" in Introduction to Machine Learning with Python
-+ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
++ "Naive Bayes" in Doing Data Science
 
+# Optional Readings
++ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
++ ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
 
 ---
 
@@ -227,6 +238,15 @@ class:center,middle
 + Understand the steps in creating a text classifier
 + Comment in your PR on the utility of something like this for the work you've done or would like to do
 
+---
+
+# Questions going forward
+--
+
++ How much did you do with text processing?
+--
+
++ How much do you want to do with text processing?
 ---
 class:center,middle
 #Thank You!
