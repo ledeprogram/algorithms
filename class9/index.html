@@ -26,15 +26,98 @@ class: center,middle
 ---
 
 # Do Now
-+ 
+![img-right-50](../images/infogain2.png)
++ Write a function that takes in the three attributes of a Simpson character and outputs the gender classification
++ [Remember what we're splitting on](http://ledeprogram.github.io/algorithms/class8/#44)
++ Test the function with the Comic's attributes
++ Submit your code and give feedback on the Do Now in your PR
+
+---
+
+class:center,middle
+# Check-in
+## Did last Thursday help?
+![img-center-70](http://i.giphy.com/3eMEdQHc11MwU.gif)
 
 ---
 
 # Goals
-+ Review cross-validation
-+ Implement a simple cross-validation function using a simple dataset
 + Review decision trees
 + Implement a simple predictor function based on output from sci-kit learn
++ Review cross-validation
++ Implement a simple cross-validation function using a simple dataset
+
+---
+
+# Decision Tree redux
+--
+
++ We have a computer calculate the best splits using a "greedy" model that strives for purity at each cut
+--
+
++ Can use any measure of purity, including information gain/entropy or Gini Index
+--
+
++ Results in a set of rules we can use to classify unseen instances
+
+---
+
+# Do Together
++ Using the tree we generated with the Iris data to code an Iris predictor
++ Use `if` statements to reproduce the decision points in the tree
++ Output the class level when you arrive at a leaf
++ We'll test our function on the following example
+
+```
+petal length = 4.5 cm
+petal width = 1.51 cm
+Should predict class 1 (iris versicolor)
+```
+
+
+---
+
+#Advantages of decision trees
+--
+
++ Easy to explain
+--
+
++ Easy to implement
+--
+
++ Work with features on different scales or mix of binary and continuous features
+--
+
++ Can mix different trees together to get a better outcome -> ensemble methods
+
+---
+
+#Advantages of decision trees
++ Offer the opportunity to see the importance of features
+--
+
+```python
+# running this on the iris decision tree
+plt.plot(dt.feature_importances_,'o')
+plt.xticks(range(iris.data.shape[1]),iris.feature_names, rotation=0)
+plt.ylim(0,1)
+```
+--
+
+![img-center-70](../images/iris_feature_importance.png)
+
+---
+
+
+
+
+---
+
+class:center,middle
+# 10 Min Break
+![img-center-40](http://imgs.xkcd.com/comics/physicists.png)
+Source: http://xkcd.com/793/
 
 ---
 
@@ -78,13 +161,66 @@ class: center,middle
 
 ---
 
-class:center,middle
-# 10 Min Break
-![img-center-40](http://imgs.xkcd.com/comics/physicists.png)
-Source: http://xkcd.com/793/
+#Stratified Cross Validation
++ 
 
 ---
 
+# Cross Validation in `sklearn`
+
+---
+
+class:center,middle
+![img-center-100](http://i.giphy.com/Wow3QqPZLmgCI.gif)
+
+---
+
+# Let's see
+--
+
++ In your groups, write pseudocode for a 5-fold CV function 
+--
+
++ Take in input data (`np.array`) and model
+--
+
++ Split into training and test across 5 iterations
+--
+
++ Use the model functions to `fit`, `predict`, and `score`
+--
+
++ Output an estimate of the model accuracy
+--
+<br>Your Groups<br>
+`Hon Georgia Paolo Kate`<br>
+`Monica Gianna DJ Jo`<br>
+`Barney Mercy(B) Shuyao Radhika`<br>
+`JJ Rebecca Shengying Sean`<br>
+
+
+---
+
+# Readings
++ ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
++ "Random Forests" in Introduction to Machine Learning with Python
++ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
+
+
+---
+
+# Assignment 1
++ Use the pseudocode you came up with in class to write your own 5-fold cross-validation function that splits the data set into 
++ Don't forget to shuffle the input before assigning to the splits
++ You can use the fit
++ Test the results with the sklearn `cross_val_score`
++ In your PR, discuss what challenges you had creating this function and if it helped you better understand cross validation
+
+---
+
+# Assignment 2
++ Using the readings, try and create a `RandomForestClassifier` for the iris dataset
++ Using a 25/75 training/test split, compare the results with the original decision tree model and describe the result to the best of your ability
 
 ---
 class:center,middle
