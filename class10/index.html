@@ -26,16 +26,75 @@ class: center,middle
 ---
 
 # Do Now
-+ 
++ Build a simple decision tree classifier
++ Use the data in the `winequality` table
++ There's an outline in `class10/donow/`
++ .red[Make a copy of the notebook]
 
 ---
 
 # Goals
 + Review homework on creating your own cross validation function
++ Introduce Bayesian models
 + Introduce random forests
 + Discuss vectorization
-+ Introduce Bayesian models
 
+---
+
+# Assignment 1
++ Use the pseudocode you came up with in class to write your own 5-fold cross-validation function that splits the data set into 5 equal-sized sets
++ Don't forget to shuffle the input before assigning to sets
++ You can use the `fit()`, `predict()`, and `score()` functions of your model in your functions
++ Test the results with the sklearn `cross_val_score`
++ In your PR, discuss what challenges you had creating this function and if it helped you better understand cross validation
+
+
+---
+
+# Theses slides are based on the slides by 
++ Tan, Steinbach and Kumar (textbook authors)
++ Eamonn Koegh (UC Riverside)
++ Andrew Moore (CMU/Google)
+
+---
+
+class:center,middle
+# Conditional Probability and Bayes Theorem
+## What was your take away from the reading?
+## "Naive Bayes" in Doing Data Science
+
+---
+
+#Event Space in Probability
+![img-center-100](../images/cp1.png)
+
+---
+
+# Conditional Probability
+![img-right-50](../images/cp1a.png)
+
++ `H` is having a headache
++ `F` is coming down with the flu
+--
+
++ P(H) = 1/10
+--
+
++ P(F) = 1/40
+--
+
++ P(H|F) = 1/2
+--
+
+## “Headaches are rare and flu is rarer, but if you’re coming down with the flu there’s a 50-50 chance you’ll have a headache.”
+
+---
+
+# Conditional Probability
++ P(A|B) = Fraction of worlds in which B is true that also have A true
++ Read it as "The probability of B given A"
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28B%20%5Cmid%20A%29%20%5C%2C%20P%28A%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
 
 ---
 
@@ -43,6 +102,31 @@ class:center,middle
 # 10 Min Break
 ![img-center-70](http://imgs.xkcd.com/comics/im_so_random.png)
 Source: http://xkcd.com/1210/
+
+---
+
+# Assigned Readings (class 9)
++ "Random Forests" in Introduction to Machine Learning with Python
++ "Naive Bayes" in Doing Data Science
+
+# Optional Readings
++ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
++ ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
+
+---
+
+# Assignment 2 (Class 9)
++ Using the readings, try and create a `RandomForestClassifier` for the iris dataset
++ Using a 25/75 training/test split, compare the results with the original decision tree model and describe the result to the best of your ability in your PR
+
+---
+
+# Assignment 3 (Class 9)
++ Review the code in `homework/bill_classifier.ipynb`
++ Understand the steps in creating a text classifier
++ Comment in your PR on the utility of something like this for the work you've done or would like to do
+
+
 
 ---
 
