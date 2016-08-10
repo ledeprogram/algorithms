@@ -92,10 +92,109 @@ class:center,middle
 
 # Conditional Probability
 + P(A|B) = Fraction of worlds in which B is true that also have A true
-+ Read it as "The probability of B given A"
++ Read it as "The probability of A given B"
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28B%20%5Cmid%20A%29%20%5C%2C%20P%28A%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28A%20%20and%20%20B%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
+
++ The **prior probability** is the probability assuming no specific information (like P(H))
++ The **posterior probability** is the probability given that we know something (like P(H|F))
+
+---
+
+#Bayes Rule
++ 
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28A%20%20and%20%20B%29%7D%7BP%28B%29%7D%20%3D%20%5Cfrac%7BP%28B%20%5Cmid%20A%29%20P%28A%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
+<!-- (http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28B%20%5Cmid%20A%29%20%5C%2C%20P%28A%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0) -->
 <!-- From http://www.sciweavers.org/free-online-latex-equation-editor -->
+
+---
+
+# Probablistic Inference
+![img-right-50](../images/cp1a.png)
+
++ `H` is having a headache
++ `F` is coming down with the flu
++ P(H) = 1/10
++ P(F) = 1/40
++ P(H|F) = 1/2
+
+### One day you wake up with a headache. You think: “Drat! 50% of flus are associated with headaches so I must have a 50-50 chance of coming down with flu”
+--
+ .blue[Is this reasoning valid?]
+
+---
+
+# Probablistic Inference
+![img-right-50](../images/cp1a.png)
+
++ `H` is having a headache
++ `F` is coming down with the flu
++ P(H) = 1/10
++ P(F) = 1/40
++ P(H|F) = 1/2
+
+
+![img-center-80](../images/pfh1.png)
+--
+
+![img-center-65](../images/pfh2.png)
+
+---
+
+# Another Example
+--
+
++ A doctor knows that meningitis causes stiff neck 50% of the time
+--
+
++ Prior probability of any patient having meningitis is 1/50,000
+--
+
++ Prior probability of any patient having stiff neck is 1/20
+--
+
+
+## If a patient has stiff neck, what’s the probability he/she has meningitis?
+--
+
+![img-center-90](../images/nbex1.png)
+
+---
+
+# Naive Bayes Classifier
++ A model that uses the probability an instance belongs to a class based on the known relationship between features
++ Predict a class (C) based on the probabilities, knowing the relationship of features (F<sub>1</sub> and F<sub>2</sub>)
++ We "naively" assume them to be independent
+
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
+
+---
+
+# Naive Bayes Classifier
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
++ P(C) is the prior probability of class C without knowing about the data
++ This quantity can be obtained by simply calculating the fraction of all training data instances belonging to that particular class
+---
+
+# Naive Bayes Classifier
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
++ P(F<sub>1</sub>, F<sub>2</sub>) is the evidence, or the probability of features F<sub>1</sub> and F<sub>2</sub>
++ This can be retrieved by calculating the fraction of all training data instances having that particular feature value
+
+---
+
+# Naive Bayes Classifier
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
++ The tricky part is the calculation of the likelihood P(F<sub>1</sub>, F<sub>2</sub> | C) 
++ It is the value describing how likely it is to see feature values F<sub>1</sub> and F<sub>2</sub> if we know that the class of the data instance is C
+
+---
+
+# Naive Bayes Classifier
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
+
+
 
 ---
 
@@ -128,6 +227,12 @@ Source: http://xkcd.com/1210/
 + Comment in your PR on the utility of something like this for the work you've done or would like to do
 
 
+---
+
+#Readings
++ ["Clustering with k-Means in Python"](https://datasciencelab.wordpress.com/2013/12/12/clustering-with-k-means-in-python/)
++ ["Clustering with k-Means is not a free lunch"](http://varianceexplained.org/r/kmeans-free-lunch/)
++ Doing Data Science, pg 71-86
 
 ---
 
