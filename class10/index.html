@@ -34,10 +34,12 @@ class: center,middle
 ---
 
 # Goals
+--
+
 + Review homework on creating your own cross validation function
+--
+
 + Introduce Bayesian models
-+ Introduce random forests
-+ Discuss vectorization
 
 ---
 
@@ -48,6 +50,35 @@ class: center,middle
 + Test the results with the sklearn `cross_val_score`
 + In your PR, discuss what challenges you had creating this function and if it helped you better understand cross validation
 
+
+---
+
+# Assignment 2 (Class 9)
++ Using the readings, try and create a `RandomForestClassifier` for the iris dataset
++ Using a 75/25 training/test split, compare the results with the original decision tree model and describe the result to the best of your ability in your PR
+
+---
+
+# Assignment 3 (Class 9)
++ Review the code in `homework/bill_classifier.ipynb`
++ Understand the steps in creating a text classifier
++ Comment in your PR on the utility of something like this for the work you've done or would like to do
+---
+
+class:center,middle
+# 10 Min Break
+![img-center-70](http://imgs.xkcd.com/comics/im_so_random.png)
+Source: http://xkcd.com/1210/
+
+---
+
+# Assigned Readings (class 9)
++ "Random Forests" in Introduction to Machine Learning with Python
++ "Naive Bayes" in Doing Data Science
+
+# Optional Readings
++ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
++ ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
 
 ---
 
@@ -91,22 +122,23 @@ class:center,middle
 ---
 
 # Conditional Probability
-+ P(A|B) = Fraction of worlds in which B is true that also have A true
-+ Read it as "The probability of A given B"
+--
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28A%20%20and%20%20B%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
++ P(A|B) = Fraction of worlds in which B is true that also have A true
+--
+
++ Read it as "The probability of A given B"
+--
+
+
+![equation](http://bit.ly/2b8ywG3)
+
+--
 
 + The **prior probability** is the probability assuming no specific information (like P(H))
+--
+
 + The **posterior probability** is the probability given that we know something (like P(H|F))
-
----
-
-#Bayes Rule
-+ 
-
-![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28A%20%20and%20%20B%29%7D%7BP%28B%29%7D%20%3D%20%5Cfrac%7BP%28B%20%5Cmid%20A%29%20P%28A%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
-<!-- (http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28A%20%5Cmid%20B%29%20%3D%20%5Cfrac%7BP%28B%20%5Cmid%20A%29%20%5C%2C%20P%28A%29%7D%7BP%28B%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0) -->
-<!-- From http://www.sciweavers.org/free-online-latex-equation-editor -->
 
 ---
 
@@ -163,9 +195,16 @@ class:center,middle
 ---
 
 # Naive Bayes Classifier
+--
+
 + A model that uses the probability an instance belongs to a class based on the known relationship between features
+--
+
 + Predict a class (C) based on the probabilities, knowing the relationship of features (F<sub>1</sub> and F<sub>2</sub>)
+--
+
 + We "naively" assume them to be independent
+--
 
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
 
@@ -174,12 +213,16 @@ class:center,middle
 # Naive Bayes Classifier
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
 + P(C) is the prior probability of class C without knowing about the data
+--
+
 + This quantity can be obtained by simply calculating the fraction of all training data instances belonging to that particular class
 ---
 
 # Naive Bayes Classifier
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
 + P(F<sub>1</sub>, F<sub>2</sub>) is the evidence, or the probability of features F<sub>1</sub> and F<sub>2</sub>
+--
+
 + This can be retrieved by calculating the fraction of all training data instances having that particular feature value
 
 ---
@@ -187,6 +230,8 @@ class:center,middle
 # Naive Bayes Classifier
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
 + The tricky part is the calculation of the likelihood P(F<sub>1</sub>, F<sub>2</sub> | C) 
+--
+
 + It is the value describing how likely it is to see feature values F<sub>1</sub> and F<sub>2</sub> if we know that the class of the data instance is C
 
 ---
@@ -194,37 +239,53 @@ class:center,middle
 # Naive Bayes Classifier
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24%20P%28C%20%5Cmid%20F_1%2CF_2%29%20%3D%20%5Cfrac%7BP%28F_1%2CF_2%20%5Cmid%20C%29%20%5C%2C%20P%28C%29%7D%7BP%28F_1%2CF_2%29%7D%20%24%24&bc=White&fc=Black&im=jpg&fs=48&ff=arev&edit=0)
 
+---
 
+# Naive Bayes Classifier
+--
+
++ NB Classifiers learn parameters by looking at each feature individually, and collect simple per-class statistics from each feature
+--
+
++ To make a prediction, a data point is compared to the statistics for each of the classes, and the best matching class is predicted
 
 ---
 
-class:center,middle
-# 10 Min Break
-![img-center-70](http://imgs.xkcd.com/comics/im_so_random.png)
-Source: http://xkcd.com/1210/
+# Naive Bayes in `sklearn`
+--
+
++ `GaussianNB` can be applied to any continuous data
+--
+
++ `BernoulliNB` assumes binary data and 
+--
+
++ `MultinomialNB` assumes count data (that is each feature represents an integer count of something, like how often a word appears in a sentence)
+--
+
++ `BernoulliNB` and `MultinomialNB` are mostly used in text data classification
 
 ---
 
-# Assigned Readings (class 9)
-+ "Random Forests" in Introduction to Machine Learning with Python
-+ "Naive Bayes" in Doing Data Science
+# Advantages of Naive Bayes
+--
 
-# Optional Readings
-+ [scikit-learn documentation on cross-validation](http://scikit-learn.org/stable/modules/cross_validation.html)
-+ ["Random forests in Python"](http://blog.yhat.com/posts/random-forests-in-python.html)
++ Fast to train and to predict
+--
 
----
++ Training procedure is relatively easy to understand
+--
 
-# Assignment 2 (Class 9)
-+ Using the readings, try and create a `RandomForestClassifier` for the iris dataset
-+ Using a 75/25 training/test split, compare the results with the original decision tree model and describe the result to the best of your ability in your PR
++ The models work very well with high-dimensional sparse data
+--
 
----
++ They are relatively robust to the parameters
+--
 
-# Assignment 3 (Class 9)
-+ Review the code in `homework/bill_classifier.ipynb`
-+ Understand the steps in creating a text classifier
-+ Comment in your PR on the utility of something like this for the work you've done or would like to do
++ Naive Bayes models are great baseline models, and 
+--
+
++ They are often used on very large datasets, where training even a linear model might take too long
 
 
 ---
@@ -237,7 +298,7 @@ Source: http://xkcd.com/1210/
 ---
 
 # Assignment 1
-+ Review Classification in the wild
++ TBD
 
 ---
 
